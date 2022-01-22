@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'pageWidget/MyHomePage.dart';
+import 'package:xgs_flutter_app/pageWidget/TabPage.dart';
+import 'layoutStudy/LayoutDemo.dart';
 import 'pageWidget/NewRoute.dart';
+import 'pageWidget/SaveRandomWords.dart';
 import 'pageWidget/TipRoute.dart';
+import 'pageWidget/RandomWords.dart';
+import 'uiElement/BasicWidget.dart';
+import 'basicWidget/TextDemo.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -9,28 +14,36 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue
+        primarySwatch: Colors.red
       ),
       //  initialRoute: "NewRoute",
       // routes: {
       //   "NewRoute": (context) => NewRoute(),
-      //  // "/": (context)=>MyHomePage(title: '开思汽配'),
+      //  // "/": (context)=>MyHomePage(title: 'Flutter'),
       // "TipRoute": (context){return TipRoute(text: ModalRoute.of(context).settings.arguments);}
       // },
-     home: MyHomePage(title: '开思汽配'),
+     home: TabPage(),
       onGenerateRoute: (settings) {
         var name = settings.name;
         var args = settings.arguments;
-        print("settings===$settings");
-        print("args===$args");
         // Do something here
         switch (name) {
           case '/':
-            return MaterialPageRoute(builder: (context) => MyHomePage(title: '菜鸟的进阶'));
+            return MaterialPageRoute(builder: (context) => TabPage());
           case 'TipRoute':
-            return MaterialPageRoute(builder: (context) => TipRoute(text: args),maintainState: false,fullscreenDialog: true);
+            return MaterialPageRoute(builder: (context) => TipRoute(text: args),maintainState: false,fullscreenDialog: false);
           case 'NewRoute':
             return MaterialPageRoute(builder: (context) => NewRoute());
+          case 'RandomWords':
+            return MaterialPageRoute(builder: (context)=> RandomWords());
+          case 'SaveRandomWords':
+            return MaterialPageRoute(builder: (context)=> SaveRandomWords(words: args));
+          case 'TextDemo':
+            return MaterialPageRoute(builder: (context)=> TextDemo());
+          case 'BasicWidget':
+            return MaterialPageRoute(builder: (context)=> BasicWidget());
+          case 'LayoutDemo':
+            return MaterialPageRoute(builder: (context)=> LayoutDemo());
           default:
             return MaterialPageRoute(builder: (context) =>  NewRoute());
         }
@@ -38,7 +51,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 
 /*
 MaterialPageRoute:构造函数的各个参数的意义

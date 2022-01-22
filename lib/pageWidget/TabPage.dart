@@ -11,47 +11,25 @@
 // the [Scaffold].
 
 import 'package:flutter/material.dart';
+import 'package:xgs_flutter_app/pageWidget/MyHomePage.dart';
+import 'package:xgs_flutter_app/uiElement/BasicWidget.dart';
 
-/// This is the main application widget.
-class TabPage extends StatelessWidget {
+class TabPage extends StatefulWidget {
   const TabPage({Key key}) : super(key: key);
 
-  static const String _title = 'Flutter Code ';
-
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: _title,
-      home: MyStatefulWidget(),
-    );
-  }
+  State<TabPage> createState() => _MyStatefulWidgetState();
 }
 
-/// This is the stateful widget that the main application instantiates.
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key key}) : super(key: key);
-
-  @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
-}
-
-/// This is the private State class that goes with MyStatefulWidget.
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _MyStatefulWidgetState extends State<TabPage> {
   int _selectedIndex = 0;
   String _title = "首页";
  MaterialColor _backColor = Colors.green;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Scaffold(
-      body: Center(
-      child: Text("home"),
-      ),
-  ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+  List<Widget> _widgetOptions = <Widget>[
+    MyHomePage(),
+    BasicWidget(),
     Text(
       'Index 2: School',
       style: optionStyle,
@@ -79,13 +57,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       case 2:
         setState(() {
           _selectedIndex = index;
-          _title = "BUG";
+          _title = "demo";
         });
         break;
       case 3:
         setState(() {
           _selectedIndex = index;
-          _title = "设置";
+          _title = "资讯";
         });
         break;
     }
@@ -97,10 +75,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_title),
-        textTheme: TextTheme(
-          title: TextStyle(color: Colors.black54,fontSize: 20, fontWeight: FontWeight.w900)
-        ),
-        backgroundColor: _backColor ,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -109,23 +83,23 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.green,
+            label: '首页',
+            backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
-            label: 'Business',
-            backgroundColor: Colors.green,
+            label: '组件',
+            backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
-            label: 'School',
-            backgroundColor: Colors.green,
+            label: '行业资讯',
+            backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
-            backgroundColor: Colors.green,
+            label: '设置',
+            backgroundColor: Colors.red,
           ),
         ],
         currentIndex: _selectedIndex,
