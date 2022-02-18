@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:xgs_flutter_app/uiElement/EcAppBar.dart';
 
 class LayoutDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: EcAppBar(title: '布局', navigationBarBackgroundColor: Colors.teal),
+      appBar: EcAppBar(
+        leadingWidget: _leadingWidget(context),
+        title: '布局学习',
+        navigationBarBackgroundColor: Colors.teal,
+      ),
       body: Center(
         child: ListView(
           children: [
-           //  _appBar(context),
             Image.asset(
               'assets/images/lake.jpeg',
               height: 240.0,
@@ -102,22 +104,12 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
     );
   }
 
-  Widget _appBar(context) {
-    return Row(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Container(
-            height: 50,
-            width: MediaQuery.of(context).size.width,
-            color: Colors.red,
-            alignment: Alignment.centerLeft,
-            child: IconButton(
-              onPressed: () => {Navigator.pop(context)},
-              icon: Icon(Icons.arrow_back_ios),
-              color: Colors.white,
-            ),
-          ),
-        ],
-    );
+  Widget _leadingWidget(context) {
+    return TextButton(
+        onPressed: () => {Navigator.pop(context)},
+        child: Text(
+          '返回',
+          style: TextStyle(color: Colors.white),
+        ));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xgs_flutter_app/uiElement/EcAppBar.dart';
 
 class SaveRandomWords extends StatelessWidget{
 
@@ -20,10 +21,23 @@ class SaveRandomWords extends StatelessWidget{
     });
     final divided = ListTile.divideTiles(context: context, tiles: tiles).toList();
     return new Scaffold(
-      appBar: AppBar(
-        title: Text("Saved Suggestions"),
+      appBar: EcAppBar(
+        leadingWidget: _leadingWidget(context),
+        title: 'Saved Suggestions',
+        navigationBarBackgroundColor: Colors.teal,
       ),
       body: new ListView(children: divided),
     );
   }
+
+  Widget _leadingWidget(context) {
+    return TextButton(
+        onPressed: () => {Navigator.pop(context)},
+        child: Text(
+          '返回',
+          style: TextStyle(color: Colors.white),
+        ));
+  }
+
+
 }

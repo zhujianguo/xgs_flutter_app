@@ -6,6 +6,7 @@ class MyHomePage extends StatefulWidget {
   // final String title;
   @override
   _MyHomePageState createState() => _MyHomePageState();
+
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -24,6 +25,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children:[
+            TextButton(
+              child:Text("路由管理学习"),
+              onPressed: (){ },
+            ),
+            TextButton(
+              child:Text("动画学习"),
+              onPressed: (){ },
+            ),
             TextButton(
               child:Text("通过of(context).pushNamed跳转"),
               onPressed: (){
@@ -87,5 +96,49 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('initState=====');
+  }
+
+  @override
+  void didUpdateWidget(covariant MyHomePage oldWidget) {
+    // 在widget重新构建时，Flutter框架会调用widget.canUpdate来检测widget树中同一位置的新旧节点，然后绝对是否更新
+    // 如果widget.canUpdate返回true则会调用此回调。
+    super.didUpdateWidget(oldWidget);
+    print("didUpdateWidget===");
+  }
+
+
+  @override
+  void deactivate() {
+    // TODO: implement deactivate
+    super.deactivate();
+    print("deactivate===");
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    print("deactivate===");
+  }
+
+  @override
+  void reassemble() {
+    //专为开发调试而提供的，在热重载时会被调用，此回调载release模式下永远不会被调用
+    super.reassemble();
+    print("reassemble===");
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    print("didChangeDependencies===");
   }
 }

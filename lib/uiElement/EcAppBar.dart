@@ -6,6 +6,8 @@ class EcAppBar extends StatefulWidget implements PreferredSizeWidget {
   Widget leadingWidget;
   Widget trailingWidget;
   String title;
+  String routerName;
+
   EcAppBar({
     @required this.leadingWidget,
     @required this.title,
@@ -58,7 +60,9 @@ class _EcAppBarState extends State<EcAppBar> {
                 new Container(
                   child: Text(widget.title,
                       style: TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white)),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white)),
                 ),
                 Positioned(
                   right: 0,
@@ -73,19 +77,23 @@ class _EcAppBarState extends State<EcAppBar> {
     );
   }
 
-  Widget _leadingWidget(){
-    if(widget.leadingWidget!=null){
+  Widget _leadingWidget() {
+    if (widget.leadingWidget != null) {
       return widget.leadingWidget;
     }
     return Container(
       height: 50,
-      //color: Colors.red,
       alignment: Alignment.centerLeft,
       child: IconButton(
-        onPressed: () => {Navigator.pop(context)},
-        icon: Icon(Icons.arrow_back_ios),
-        color: Colors.white,
-      ),
-    );
+          onPressed: () => {
+          if(widget.routerName != null){
+          Navigator.pop(context, widget.routerName)
+      }else{
+    Navigator.pop(context)
+    }
+    },
+      icon: Icon(Icons.arrow_back_ios),
+      color: Colors.white,
+    ),);
   }
 }

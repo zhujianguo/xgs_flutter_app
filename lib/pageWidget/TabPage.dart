@@ -24,7 +24,6 @@ class TabPage extends StatefulWidget {
 class _MyStatefulWidgetState extends State<TabPage> {
   int _selectedIndex = 0;
   String _title = "首页";
- MaterialColor _backColor = Colors.green;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List<Widget> _widgetOptions = <Widget>[
