@@ -1,72 +1,33 @@
+
 import 'package:flutter/material.dart';
-import 'package:xgs_flutter_app/pageWidget/TabPage.dart';
-import 'layoutStudy/LayoutDemo.dart';
-import 'pageWidget/NewRoute.dart';
-import 'pageWidget/SaveRandomWords.dart';
-import 'pageWidget/TipRoute.dart';
-import 'pageWidget/RandomWords.dart';
-import 'uiElement/BasicWidget.dart';
-import 'basicWidget/TextDemo.dart';
+import 'route.dart';
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.red
-      ),
-      //  initialRoute: "NewRoute",
-      // routes: {
-      //   "NewRoute": (context) => NewRoute(),
-      //  // "/": (context)=>MyHomePage(title: 'Flutter'),
-      // "TipRoute": (context){return TipRoute(text: ModalRoute.of(context).settings.arguments);}
-      // },
-     home: TabPage(),
-      onGenerateRoute: (settings) {
-        var name = settings.name;
-        var args = settings.arguments;
-        // Do something here
-        switch (name) {
-          case '/':
-            return MaterialPageRoute(builder: (context) => TabPage());
-          case 'TipRoute':
-            return MaterialPageRoute(builder: (context) => TipRoute(text: args),maintainState: false,fullscreenDialog: false);
-          case 'NewRoute':
-            return MaterialPageRoute(builder: (context) => NewRoute());
-          case 'RandomWords':
-            return MaterialPageRoute(builder: (context)=> RandomWords());
-          case 'SaveRandomWords':
-            return MaterialPageRoute(builder: (context)=> SaveRandomWords(words: args));
-          case 'TextDemo':
-            return MaterialPageRoute(builder: (context)=> TextDemo());
-          case 'BasicWidget':
-            return MaterialPageRoute(builder: (context)=> BasicWidget());
-          case 'LayoutDemo':
-            return MaterialPageRoute(builder: (context)=> LayoutDemo());
-          default:
-            return MaterialPageRoute(builder: (context) =>  NewRoute());
-        }
-      },
+      theme: ThemeData(primarySwatch: Colors.red),
+        initialRoute: CassRouter.initialRoute,
+        routes: CassRouter.routes,
+        onGenerateRoute:CassRouter.generateRoute,
+        debugShowCheckedModeBanner: false
     );
   }
 }
-
 /*
-MaterialPageRoute:构造函数的各个参数的意义
-MaterialPageRoute({
-  WidgetBuilder builder,
-  RouteSettings settings,
-  bool maintainState = true,
-  bool fullscreenDialog = false,
-})
-builder：是一个WidgetBuilder类型的回调函数，它的作用是构建路由页的具体 内容，返回值是一个widget.我们通常要实现此回调，返回新的路由实例
-settings：包含路由的配置信息，如路由名称，是否初始路由（首页）
-maintainSate：默认情况下，当入栈一个新路由时，原来的路由仍然会保存在内存中，如果想在路由没用的时候释放其所占的资源，可以其为false
-fullscreenDialog：表示新的路由页面是否是一个全屏的模态对话框，在IOS中，如果fullscreenDialog为true,新页面将会从屏幕底部滑入（而不是水平方向）
-===================================================================================================
-Navigator:路由管理组件
-push：将给定的路由入栈，返回值是一个future对象，用以接收新路由出栈（即关闭）时的返回数据。
-pop: 将栈顶路由出栈，result为页面关闭时返回给上一个页面的数据。
-Navigator.push(BuildContext context,Route route) 等价于 Navigator.of(context).push(Route route);
+title ： 在任务管理窗口中所显示的应用名字
+theme ： 应用各种 UI 所使用的主题颜色
+color ： 应用的主要颜色值（primary color），也就是安卓任务管理窗口中所显示的应用颜色
+home ： 应用默认所显示的界面 Widget
+routes ： 应用的顶级导航表格，这个是多页面应用用来控制页面跳转的，类似于网页的网址
+initialRoute ：第一个显示的路由名字，默认值为 Navigator.defaultRouteName
+onGenerateRoute ： 生成路由的回调函数，当导航的命名路由的时候，会使用这个来生成界面
+onLocaleChanged ： 当系统修改语言的时候，会触发这个回调
+navigatorObservers ： 应用 Navigator 的监听器
+debugShowMaterialGrid ： 是否显示 纸墨设计 基础布局网格，用来调试 UI 的工具
+showPerformanceOverlay ： 显示性能标签
+debugShowCheckedModeBanner ：是否显示右上角DEBUG标签 （调试开关）
+checkerboardRasterCacheImages ：检查缓存的图像开关，检测在界面重绘时频繁闪烁的图像（调试开关）
+showSemanticsDebugger ：是否打开Widget边框，类似Android开发者模式中显示布局边界（调试开关）
  */
