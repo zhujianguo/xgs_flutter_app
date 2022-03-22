@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-class NewRoute extends StatelessWidget{
+class NewRoutePage extends StatelessWidget{
+  static const String routeName = "newRoutePage";
   @override
   Widget build(BuildContext context){
     final wordPair = new WordPair.random();

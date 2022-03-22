@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
-class BasicWidget extends StatelessWidget {
+class BasicWidgetDetailsPage extends StatelessWidget {
+  static const String routeName = "basicWidgetDetailsPage";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
           children: [
             _myWidget(context, 'TextDemo', 'Text使用'),
+            _myWidget(context, 'ButtonDemo', '按钮使用'),
             _myWidget(context, 'ImageDemo', 'Image使用'),
           ],
         ));

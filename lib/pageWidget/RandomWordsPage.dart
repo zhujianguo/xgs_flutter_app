@@ -3,13 +3,14 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
-class RandomWords extends StatefulWidget {
+class RandomWordsPage extends StatefulWidget {
+  static const String routeName = "randomWordsPage";
   @override
   createState() => new RandomWordsState();
 
 }
 
-class RandomWordsState extends State<RandomWords> {
+class RandomWordsState extends State<RandomWordsPage> {
   final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18.0);
   final _saved = new Set<WordPair>();
@@ -66,6 +67,6 @@ class RandomWordsState extends State<RandomWords> {
   }
 
   void _pushSaved() {
-    Navigator.of(context).pushNamed("SaveRandomWords", arguments: _saved);
+    Navigator.of(context).pushNamed("saveRandomWordsPage", arguments: _saved);
   }
 }

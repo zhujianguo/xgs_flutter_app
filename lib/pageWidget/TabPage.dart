@@ -12,11 +12,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:xgs_flutter_app/pageWidget/MyHomePage.dart';
-import 'package:xgs_flutter_app/uiElement/BasicWidget.dart';
+import 'package:xgs_flutter_app/uiElement/BasicWidgetDetailsPage.dart';
 
 class TabPage extends StatefulWidget {
+  static const String routeName = "tabPage";
   const TabPage({Key key}) : super(key: key);
-
   @override
   State<TabPage> createState() => _MyStatefulWidgetState();
 }
@@ -28,7 +28,7 @@ class _MyStatefulWidgetState extends State<TabPage> {
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List<Widget> _widgetOptions = <Widget>[
     MyHomePage(),
-    BasicWidget(),
+    BasicWidgetDetailsPage(),
     Text(
       'Index 2: School',
       style: optionStyle,

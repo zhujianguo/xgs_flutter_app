@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:xgs_flutter_app/uiElement/EcAppBar.dart';
 
-class SaveRandomWords extends StatelessWidget{
+class SaveRandomWordsPage extends StatelessWidget{
+  static const String routeName = "saveRandomWordsPage";
 
-  SaveRandomWords({
+  SaveRandomWordsPage({
     Key key,
     @required this.words,  // 接收一个text参数
   }) : super(key: key);
@@ -32,7 +33,10 @@ class SaveRandomWords extends StatelessWidget{
 
   Widget _leadingWidget(context) {
     return TextButton(
-        onPressed: () => {Navigator.pop(context)},
+        onPressed: () => {
+          debugDumpRenderTree(),
+          Navigator.pop(context)
+        },
         child: Text(
           '返回',
           style: TextStyle(color: Colors.white),

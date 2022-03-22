@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TextDemo extends StatelessWidget {
+class TextDemoPage extends StatelessWidget {
+  static const String routeName = "textDemoPage";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

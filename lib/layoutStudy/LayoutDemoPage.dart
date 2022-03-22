@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:xgs_flutter_app/uiElement/EcAppBar.dart';
 
-class LayoutDemo extends StatelessWidget {
+class LayoutDemoPage extends StatelessWidget {
+  static const String routeName = "layoutDemoPage";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +17,6 @@ class LayoutDemo extends StatelessWidget {
             Image.asset(
               'assets/images/lake.jpeg',
               height: 240.0,
-              width: 600,
               fit: BoxFit.cover,
             ),
             _titleSection(),

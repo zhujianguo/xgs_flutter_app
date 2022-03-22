@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class TipRoute extends StatelessWidget {
-  TipRoute({
+class TipRoutePage extends StatelessWidget {
+  static const String routeName = "tipRoutePage";
+  TipRoutePage({
     Key key,
     @required this.text,  // 接收一个text参数
   }) : super(key: key);
