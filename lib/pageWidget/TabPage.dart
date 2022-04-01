@@ -24,17 +24,16 @@ class TabPage extends StatefulWidget {
 class _MyStatefulWidgetState extends State<TabPage> {
   int _selectedIndex = 0;
   String _title = "首页";
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List<Widget> _widgetOptions = <Widget>[
     MyHomePage(),
     BasicWidgetDetailsPage(),
     Text(
-      'Index 2: School',
+      '资讯',
       style: optionStyle,
     ),
     Text(
-      'Index 3: Settings',
+      '设置',
       style: optionStyle,
     ),
   ];
@@ -56,18 +55,27 @@ class _MyStatefulWidgetState extends State<TabPage> {
       case 2:
         setState(() {
           _selectedIndex = index;
-          _title = "demo";
+          _title = "资讯";
         });
         break;
       case 3:
         setState(() {
           _selectedIndex = index;
-          _title = "资讯";
+          _title = "设置";
         });
         break;
     }
 
   }
+
+  Color _setIconColor(index){
+    if(index==_selectedIndex){
+      return Colors.red;
+    }
+    return Colors.black45;
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -78,33 +86,31 @@ class _MyStatefulWidgetState extends State<TabPage> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '首页',
-            backgroundColor: Colors.red,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: '组件',
-            backgroundColor: Colors.red,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: '行业资讯',
-            backgroundColor: Colors.red,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: '设置',
-            backgroundColor: Colors.red,
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black54,
-        onTap: _onItemTapped,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+
+        },
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
       ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        shape: CircularNotchedRectangle(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            IconButton(onPressed: (){_onItemTapped(0);}, icon: Icon(Icons.home), color: _setIconColor(0)),
+            IconButton(onPressed: (){_onItemTapped(1);}, icon: Icon(Icons.business), color: _setIconColor(1)),
+            Text(''),
+            IconButton(onPressed: (){_onItemTapped(2);}, icon: Icon(Icons.school), color: _setIconColor(2)),
+            IconButton(onPressed: (){_onItemTapped(3);}, icon: Icon(Icons.settings), color: _setIconColor(3))
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

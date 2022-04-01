@@ -11,6 +11,7 @@ import 'basicWidget/TextDemoPage.dart';
 
 class CassRouter {
 
+  // 路由配置表
   static final Map<String, WidgetBuilder> routes = {
     TabPage.routeName: (context) => TabPage(),
     LayoutDemoPage.routeName: (context) => LayoutDemoPage(),
@@ -20,20 +21,21 @@ class CassRouter {
     TextDemoPage.routeName: (context) => TextDemoPage()
   };
 
+  // 初始化路由
   static final String initialRoute = TabPage.routeName;
+  // 路由勾子
   static final RouteFactory generateRoute = (settings) {
     switch (settings.name) {
-      case '/':
-        return MaterialPageRoute(builder: (context) => TabPage());
       case 'tipRoutePage':
         return MaterialPageRoute(builder: (context) => TipRoutePage(text: settings.arguments),maintainState: false,fullscreenDialog: false);
       case 'saveRandomWordsPage':
         return MaterialPageRoute(builder: (context)=> SaveRandomWordsPage(words: settings.arguments));
       default:
-        return MaterialPageRoute(builder: (context) =>  NewRoutePage());
+        return null;
     }
   };
 
+  // 路由404（即路由页面不存在）
   static final RouteFactory unKnowRoute = (settings) {
     return MaterialPageRoute(builder: (context){
       return NewRoutePage();

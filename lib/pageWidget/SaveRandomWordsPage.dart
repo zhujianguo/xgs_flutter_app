@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:xgs_flutter_app/uiElement/EcAppBar.dart';
+import 'package:xgs_flutter_app/customWidget/EcAppBar.dart';
 
 class SaveRandomWordsPage extends StatelessWidget{
   static const String routeName = "saveRandomWordsPage";
