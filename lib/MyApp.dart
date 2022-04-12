@@ -7,11 +7,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.red),
+      theme: ThemeData(primarySwatch: Colors.red,fontFamily: 'Caveat'),
         initialRoute: CassRouter.initialRoute,
         routes: CassRouter.routes,
         onGenerateRoute:CassRouter.generateRoute,
-        debugShowCheckedModeBanner: false
+        debugShowCheckedModeBanner: false,
+        onUnknownRoute: CassRouter.unKnowRoute,
     );
   }
 }

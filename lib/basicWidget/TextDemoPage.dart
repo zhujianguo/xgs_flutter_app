@@ -74,7 +74,25 @@ class TextDemoPage extends StatelessWidget {
               textAlign: TextAlign.left, // 文字对齐方式
               maxLines: 5, // 文本要跨越的可选最大行数
               overflow: TextOverflow.fade,
-            )
+            ),
+            DefaultTextStyle(
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 20.0,
+                ),
+                textAlign: TextAlign.start,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:<Widget> [
+                    Text("小怪兽"),
+                    Text("奥特曼"),
+                    Text("怪兽奥特曼",
+                    style: TextStyle(
+                      inherit: false,
+                      color: Colors.amber
+                    ),)
+                  ],
+                ))
           ],
         ),
       ),

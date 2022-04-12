@@ -4,10 +4,7 @@ import 'package:xgs_flutter_app/customWidget/EcAppBar.dart';
 class SaveRandomWordsPage extends StatelessWidget{
   static const String routeName = "saveRandomWordsPage";
 
-  SaveRandomWordsPage({
-    Key key,
-    @required this.words,  // 接收一个text参数
-  }) : super(key: key);
+  SaveRandomWordsPage({@required this.words}); // 接收一个text参数
   final words;
   final _biggerFont = const TextStyle(fontSize: 18.0);
   @override

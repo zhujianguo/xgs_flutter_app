@@ -75,9 +75,21 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             TextButton(
-              child:Text("Flutter中构建布局"),
+              child:Text("自定义导航样式"),
               onPressed: (){
                 Navigator.of(context).pushNamed("layoutDemoPage");
+              },
+            ),
+            TextButton(
+              child:Text("404页面"),
+              onPressed: (){
+                Navigator.of(context).pushNamed("errorPage");
+              },
+            ),
+            TextButton(
+              child:Text("未能路由成功"),
+              onPressed: (){
+                Navigator.of(context).pushNamed("error");
               },
             ),
             Text(

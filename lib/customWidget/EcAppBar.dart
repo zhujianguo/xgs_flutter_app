@@ -9,7 +9,7 @@ class EcAppBar extends StatefulWidget implements PreferredSizeWidget {
   String routerName;
 
   EcAppBar({
-    @required this.leadingWidget,
+    this.leadingWidget,
     @required this.title,
     this.contentHeight = 44,
     this.navigationBarBackgroundColor = Colors.red,

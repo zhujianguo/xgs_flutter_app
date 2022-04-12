@@ -14,8 +14,8 @@ class LayoutDemoPage extends StatelessWidget {
       body: Center(
         child: ListView(
           children: [
-            Image.asset(
-              'assets/images/lake.jpeg',
+            Image(
+              image:AssetImage('assets/images/lake.jpeg'),
               height: 240.0,
               fit: BoxFit.cover,
             ),

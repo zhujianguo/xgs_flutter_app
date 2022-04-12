@@ -7,9 +7,9 @@ class BasicWidgetDetailsPage extends StatelessWidget {
     return Scaffold(
         body: Column(
           children: [
-            _myWidget(context, 'TextDemo', 'Text使用'),
-            _myWidget(context, 'ButtonDemo', '按钮使用'),
-            _myWidget(context, 'ImageDemo', 'Image使用'),
+            _myWidget(context, 'textDemoPage', 'Text使用'),
+            _myWidget(context, 'buttonDemoPage', '按钮使用'),
+            _myWidget(context, 'imageDemoPage', 'Image使用'),
           ],
         ));
   }

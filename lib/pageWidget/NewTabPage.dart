@@ -12,7 +12,6 @@ import 'package:flutter/material.dart';
 
 /// This is the stateful widget that the main application instantiates.
 class NewTabPage extends StatefulWidget {
-  const NewTabPage({Key key}) : super(key: key);
 
   @override
   State<NewTabPage> createState() => _MyStatefulWidgetState();

@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:xgs_flutter_app/pageWidget/TabPage.dart';
-import 'layoutStudy/LayoutDemoPage.dart';
+import 'pageWidget/LayoutDemoPage.dart';
+import 'pageWidget/TabPage.dart';
 import 'pageWidget/NewRoutePage.dart';
 import 'pageWidget/SaveRandomWordsPage.dart';
 import 'pageWidget/TipRoutePage.dart';
