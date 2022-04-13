@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xgs_flutter_app/pageWidget/MyHomePage.dart';
+import 'package:xgs_flutter_app/route.dart';
 import 'package:xgs_flutter_app/uiElement/BasicWidgetDetailsPage.dart';
 
 class TabPage extends StatefulWidget {
@@ -15,6 +16,11 @@ class _MyStatefulWidgetState extends State<TabPage> {
 
   @override
   Widget build(BuildContext context) {
+    // CassRouter.routes.forEach((key, value) {
+    //   print('routes=====${key}对应：${value}');
+    // });
+    print("TabPage===========");
+
     return Scaffold(
       appBar: AppBar(
         title: Text(_title),

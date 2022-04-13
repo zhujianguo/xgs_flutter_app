@@ -5,6 +5,7 @@ class LayoutDemoPage extends StatelessWidget {
   static const String routeName = "layoutDemoPage";
   @override
   Widget build(BuildContext context) {
+    print("LayoutDemoPage===========");
     return Scaffold(
       appBar: EcAppBar(
         leadingWidget: _leadingWidget(context),

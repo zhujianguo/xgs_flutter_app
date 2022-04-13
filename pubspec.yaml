@@ -44,6 +44,11 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  fonts:
+  - family: Caveat
+    fonts:
+      - asset: assets/fonts/Caveat-Bold.ttf
+      - asset: assets/fonts/Caveat-Medium.ttf
   assets:
     - assets/images/lake.jpeg
 

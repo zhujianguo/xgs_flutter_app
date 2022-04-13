@@ -1,53 +1,70 @@
-/// Flutter code sample for BottomNavigationBar
-
-// This example shows a [BottomNavigationBar] as it is used within a [Scaffold]
-// widget. The [BottomNavigationBar] has three [BottomNavigationBarItem]
-// widgets, which means it defaults to [BottomNavigationBarType.fixed], and
-// the [currentIndex] is set to index 0. The selected item is
-// amber. The `_onItemTapped` function changes the selected item's index
-// and displays a corresponding message in the center of the [Scaffold].
 
 import 'package:flutter/material.dart';
+import 'package:xgs_flutter_app/pageWidget/MyHomePage.dart';
+import 'package:xgs_flutter_app/uiElement/BasicWidgetDetailsPage.dart';
 
 
-/// This is the stateful widget that the main application instantiates.
+/// 初始版本的底部菜单，已弃用
 class NewTabPage extends StatefulWidget {
+  const NewTabPage({Key key}) : super(key: key);
+  static const String routeName = "newTabPage";
 
   @override
   State<NewTabPage> createState() => _MyStatefulWidgetState();
 }
 
-/// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<NewTabPage> {
   int _selectedIndex = 0;
+  String _title = "首页";
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  List<Widget> _widgetOptions = <Widget>[
+    MyHomePage(),
+    BasicWidgetDetailsPage(),
     Text(
-      'Index 0: Home',
+      '资讯',
       style: optionStyle,
     ),
     Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
+      '设置',
       style: optionStyle,
     ),
   ];
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    switch(index){
+      case 0:
+        setState(() {
+          _selectedIndex = index;
+          _title = "首页";
+        });
+        break;
+      case 1:
+        setState(() {
+          _selectedIndex = index;
+          _title = "组件";
+        });
+        break;
+      case 2:
+        setState(() {
+          _selectedIndex = index;
+          _title = "资讯";
+        });
+        break;
+      case 3:
+        setState(() {
+          _selectedIndex = index;
+          _title = "设置";
+        });
+        break;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+        title: Text(_title),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -65,10 +82,15 @@ class _MyStatefulWidgetState extends State<NewTabPage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
             label: 'School',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Setting',
           )
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.red,
+        type: BottomNavigationBarType.fixed, // BottomNavigationBar超出三个时，需要加上此属性，不让默认颜色会丢失
         onTap: _onItemTapped,
       ),
     );

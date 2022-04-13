@@ -10,6 +10,7 @@ class TipRoutePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('TipRoutePage=======');
     return Scaffold(
       appBar: AppBar(
         title: Text("提示"),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'TipRoutePage.dart';
 
 class MyHomePage extends StatefulWidget {
+  static const String routeName = "myHomePage";
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -92,18 +93,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.of(context).pushNamed("error");
               },
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
           ],
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: Icon(Icons.add),
-      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'pageWidget/NewTabPage.dart';
 import 'pageWidget/LayoutDemoPage.dart';
 import 'pageWidget/TabPage.dart';
 import 'pageWidget/NewRoutePage.dart';
@@ -13,6 +14,7 @@ class CassRouter {
 
   // 路由配置表
   static final Map<String, WidgetBuilder> routes = {
+    NewTabPage.routeName: (context) => NewTabPage(),
     TabPage.routeName: (context) => TabPage(),
     LayoutDemoPage.routeName: (context) => LayoutDemoPage(),
     NewRoutePage.routeName: (context) => NewRoutePage(),

@@ -6,7 +6,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: '小怪兽学习Flutter',
       theme: ThemeData(primarySwatch: Colors.red,fontFamily: 'Caveat'),
         initialRoute: CassRouter.initialRoute,
         routes: CassRouter.routes,
