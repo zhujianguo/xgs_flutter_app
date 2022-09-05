@@ -17,7 +17,7 @@ class ErrorPage extends StatelessWidget{
           children: [
             Image.asset(
               ImagePath.error_page_image,
-              width: Adapt.screenW(),
+              width: Adapt.width,
             ),
           ],
         ),
