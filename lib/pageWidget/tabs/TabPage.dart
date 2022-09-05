@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:xgs_flutter_app/pageWidget/MyHomePage.dart';
-import 'package:xgs_flutter_app/route.dart';
+import 'package:xgs_flutter_app/pageWidget/tabs/MyHomePage.dart';
 import 'package:xgs_flutter_app/uiElement/BasicWidgetDetailsPage.dart';
 
 class TabPage extends StatefulWidget {

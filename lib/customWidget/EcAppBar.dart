@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class EcAppBar extends StatefulWidget implements PreferredSizeWidget {
   final double contentHeight; //从外部指定高度
   Color navigationBarBackgroundColor; //设置导航栏背景的颜色
@@ -57,7 +58,7 @@ class _EcAppBarState extends State<EcAppBar> {
                     child: _leadingWidget(),
                   ),
                 ),
-                new Container(
+                Container(
                   child: Text(widget.title,
                       style: TextStyle(
                           fontSize: 20,

@@ -1,13 +1,13 @@
 
 import 'package:flutter/material.dart';
-import 'route.dart';
+import 'Route.dart';
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '小怪兽学习Flutter',
-      theme: ThemeData(primarySwatch: Colors.red,fontFamily: 'Caveat'),
+      theme: ThemeData(primarySwatch: Colors.red, fontFamily: 'Caveat'),
         initialRoute: CassRouter.initialRoute,
         routes: CassRouter.routes,
         onGenerateRoute:CassRouter.generateRoute,

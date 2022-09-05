@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'TipRoutePage.dart';
+import '../TipRoutePage.dart';
+import '../layoutWeight/ContainerDemoPage.dart';
 
 class MyHomePage extends StatefulWidget {
   static const String routeName = "myHomePage";
@@ -18,8 +19,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
+    return SingleChildScrollView(
+      child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children:[
@@ -34,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
             TextButton(
               child:Text("通过of(context).pushNamed跳转"),
               onPressed: (){
-                Navigator.of(context).pushNamed("tipRoutePage",arguments: "我是小怪兽0");
+                Navigator.of(context).pushNamed("tipRoutePage",arguments: "我是小怪兽1号");
               },
             ),
             TextButton(
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push( context,
                     MaterialPageRoute(builder: (context) {
                       return TipRoutePage(
-                        text: "我是小怪兽1",
+                        text: "我是小怪兽2号",
                       );
                     }));
               },
@@ -91,6 +92,18 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Text("未能路由成功"),
               onPressed: (){
                 Navigator.of(context).pushNamed("error");
+              },
+            ),
+            TextButton(
+              child:Text("LayoutWeight示例"),
+              onPressed: (){
+                Navigator.of(context).pushNamed("layoutDemoPage");
+              },
+            ),
+            TextButton(
+              child:Text("containerDemoPage"),
+              onPressed: (){
+                Navigator.of(context).pushNamed("containerDemoPage");
               },
             ),
           ],

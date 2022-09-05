@@ -1,26 +1,25 @@
 
 import 'package:flutter/material.dart';
-import 'pageWidget/NewTabPage.dart';
 import 'pageWidget/LayoutDemoPage.dart';
-import 'pageWidget/TabPage.dart';
+import 'pageWidget/tabs/TabPage.dart';
 import 'pageWidget/NewRoutePage.dart';
 import 'pageWidget/SaveRandomWordsPage.dart';
 import 'pageWidget/TipRoutePage.dart';
 import 'pageWidget/RandomWordsPage.dart';
 import 'uiElement/BasicWidgetDetailsPage.dart';
 import 'basicWidget/TextDemoPage.dart';
+import 'pageWidget/layoutWeight/ContainerDemoPage.dart';
 
 class CassRouter {
-
   // 路由配置表
   static final Map<String, WidgetBuilder> routes = {
-    NewTabPage.routeName: (context) => NewTabPage(),
     TabPage.routeName: (context) => TabPage(),
     LayoutDemoPage.routeName: (context) => LayoutDemoPage(),
     NewRoutePage.routeName: (context) => NewRoutePage(),
     RandomWordsPage.routeName: (context) => RandomWordsPage(),
     BasicWidgetDetailsPage.routeName: (context) => BasicWidgetDetailsPage(),
-    TextDemoPage.routeName: (context) => TextDemoPage()
+    TextDemoPage.routeName: (context) => TextDemoPage(),
+    ContainerDemoPage.routeName: (context) => ContainerDemoPage()
   };
 
   // 初始化路由
