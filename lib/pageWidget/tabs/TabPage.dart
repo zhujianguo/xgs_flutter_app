@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xgs_flutter_app/pageWidget/tabs/MyHomePage.dart';
-import 'package:xgs_flutter_app/uiElement/BasicWidgetDetailsPage.dart';
+import 'package:xgs_flutter_app/pageWidget/tabs/BasicWidgetDetailsPage.dart';
 
 class TabPage extends StatefulWidget {
   static const String routeName = "tabPage";

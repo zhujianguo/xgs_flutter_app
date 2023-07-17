@@ -9,27 +9,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Center(
+      child: Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children:[
             TextButton(
-              child:Text("路由管理学习"),
+              child:Text("基础组件"),
               onPressed: (){ },
             ),
             TextButton(
-              child:Text("动画学习"),
+              child:Text("布局类组件"),
               onPressed: (){ },
             ),
             TextButton(
@@ -102,6 +95,48 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             TextButton(
               child:Text("containerDemoPage"),
+              onPressed: (){
+                Navigator.of(context).pushNamed("containerDemoPage");
+              },
+            ),
+            TextButton(
+              child:Text("第五章：容器类组件"),
+              onPressed: (){
+                Navigator.of(context).pushNamed("containerDemoPage");
+              },
+            ),
+            TextButton(
+              child:Text("第六章：可滚动组件"),
+              onPressed: (){
+                Navigator.of(context).pushNamed("containerDemoPage");
+              },
+            ),
+            TextButton(
+              child:Text("第七章：功能型组件", style: TextStyle(color: Colors.red),),
+              onPressed: (){
+                Navigator.of(context).pushNamed("containerDemoPage");
+              },
+            ),
+            TextButton(
+              child:Text("第八章：事件处理与通知"),
+              onPressed: (){
+                Navigator.of(context).pushNamed("pointerMoveIndicator");
+              },
+            ),
+            TextButton(
+              child:Text("第九章：动画"),
+              onPressed: (){
+                Navigator.of(context).pushNamed("containerDemoPage");
+              },
+            ),
+            TextButton(
+              child:Text("第十章：自定义组件"),
+              onPressed: (){
+                Navigator.of(context).pushNamed("containerDemoPage");
+              },
+            ),
+            TextButton(
+              child:Text("第十一章：文件操作与网络请求"),
               onPressed: (){
                 Navigator.of(context).pushNamed("containerDemoPage");
               },

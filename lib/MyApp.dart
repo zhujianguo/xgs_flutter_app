@@ -7,7 +7,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '小怪兽学习Flutter',
-      theme: ThemeData(primarySwatch: Colors.red, fontFamily: 'Caveat'),
+      // theme: ThemeData(primarySwatch: Colors.red, fontFamily: 'Caveat'),
+        theme: ThemeData(primarySwatch: Colors.red),
         initialRoute: CassRouter.initialRoute,
         routes: CassRouter.routes,
         onGenerateRoute:CassRouter.generateRoute,

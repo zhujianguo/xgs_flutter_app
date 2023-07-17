@@ -1,12 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'eventDemo/PointerMoveIndicator.dart';
 import 'pageWidget/LayoutDemoPage.dart';
 import 'pageWidget/tabs/TabPage.dart';
 import 'pageWidget/NewRoutePage.dart';
 import 'pageWidget/SaveRandomWordsPage.dart';
 import 'pageWidget/TipRoutePage.dart';
 import 'pageWidget/RandomWordsPage.dart';
-import 'uiElement/BasicWidgetDetailsPage.dart';
+import 'pageWidget/tabs/BasicWidgetDetailsPage.dart';
 import 'basicWidget/TextDemoPage.dart';
 import 'pageWidget/layoutWeight/ContainerDemoPage.dart';
 
@@ -19,7 +20,8 @@ class CassRouter {
     RandomWordsPage.routeName: (context) => RandomWordsPage(),
     BasicWidgetDetailsPage.routeName: (context) => BasicWidgetDetailsPage(),
     TextDemoPage.routeName: (context) => TextDemoPage(),
-    ContainerDemoPage.routeName: (context) => ContainerDemoPage()
+    ContainerDemoPage.routeName: (context) => ContainerDemoPage(),
+    PointerMoveIndicator.routeName: (context) => PointerMoveIndicator(x:0,y:10)
   };
 
   // 初始化路由
