@@ -12,6 +12,8 @@ import 'basicWidget/TextDemoPage.dart';
 import 'pageWidget/layoutWeight/ContainerDemoPage.dart';
 
 class CassRouter {
+  // 初始化路由
+  static final String initialRoute = TabPage.routeName;
   // 路由配置表
   static final Map<String, WidgetBuilder> routes = {
     TabPage.routeName: (context) => TabPage(),
@@ -21,18 +23,16 @@ class CassRouter {
     BasicWidgetDetailsPage.routeName: (context) => BasicWidgetDetailsPage(),
     TextDemoPage.routeName: (context) => TextDemoPage(),
     ContainerDemoPage.routeName: (context) => ContainerDemoPage(),
-    PointerMoveIndicator.routeName: (context) => PointerMoveIndicator(x:0,y:10)
+    PointerMoveIndicator.routeName: (context) => PointerMoveIndicator(x:0,y:10),
+    SaveRandomWordsPage.routeName: (context) => SaveRandomWordsPage(words: ModalRoute.of(context).settings.arguments),
   };
-
-  // 初始化路由
-  static final String initialRoute = TabPage.routeName;
   // 路由勾子
   static final RouteFactory generateRoute = (settings) {
     switch (settings.name) {
       case 'tipRoutePage':
         return MaterialPageRoute(builder: (context) => TipRoutePage(text: settings.arguments),maintainState: false,fullscreenDialog: false);
-      case 'saveRandomWordsPage':
-        return MaterialPageRoute(builder: (context)=> SaveRandomWordsPage(words: settings.arguments));
+      // case 'saveRandomWordsPage':
+      //   return MaterialPageRoute(builder: (context)=> SaveRandomWordsPage(words: settings.arguments));
       default:
         return null;
     }
@@ -63,4 +63,7 @@ Navigator:路由管理组件
 push：将给定的路由入栈，返回值是一个future对象，用以接收新路由出栈（即关闭）时的返回数据。
 pop: 将栈顶路由出栈，result为页面关闭时返回给上一个页面的数据。
 Navigator.push(BuildContext context,Route route) 等价于 Navigator.of(context).push(Route route);
+
+========================================================================================
+SaveRandomWordsPage和TipRoutePage是两种实现路由携带参数跳转的方式
  */
