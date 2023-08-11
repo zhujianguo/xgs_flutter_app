@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //导航到新路由
               Navigator.push( context,
                   MaterialPageRoute(builder: (context) {
-                    return TipRoutePage(
+                    return const TipRoutePage(
                       text: "我是小怪兽2号",
                     );
                   }));
@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
               var result = await Navigator.push(context,
                   MaterialPageRoute(
                       builder: (context){
-                        return TipRoutePage(
+                        return const TipRoutePage(
                           text: "点击返回按钮携带参数回去",
                         );
                       },
@@ -171,7 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    print("deactivate===");
+    print("dispose===");
   }
 
   @override
