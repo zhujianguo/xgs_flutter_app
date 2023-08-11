@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 //同样是按照惯例， widget 的属性应尽可能的被声明为final，防止被意外改变。
 
 class ContainerDemoPage extends StatelessWidget{
-  static const String routeName = "containerDemoPage";
 
   const ContainerDemoPage({Key key}) : super(key: key);
 

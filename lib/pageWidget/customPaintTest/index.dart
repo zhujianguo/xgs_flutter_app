@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'widget/HeartIconPainter.dart';
 
 class CustomPaintTest extends StatelessWidget {
-  static const String routeName = "customPaintTest";
 
   const CustomPaintTest({Key key}) : super(key: key);
 

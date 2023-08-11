@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class TextDemoPage extends StatelessWidget {
-  static const String routeName = "textDemoPage";
 
   const TextDemoPage({Key key}) : super(key: key);
   @override

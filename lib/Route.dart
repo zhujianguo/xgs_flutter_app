@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'eventDemo/PointerMoveIndicator.dart';
+import 'pageLifeCycleTest/index.dart';
 import 'pageWidget/LayoutDemoPage.dart';
 import 'pageWidget/customPaintTest/index.dart';
 import 'pageWidget/tabs/TabPage.dart';
@@ -13,26 +14,41 @@ import 'pageWidget/tabs/BasicWidgetDetailsPage.dart';
 import 'basicWidget/TextDemoPage.dart';
 import 'pageWidget/layoutWeight/ContainerDemoPage.dart';
 
+class Routers {
+  static const String tabPage = "/tabPage";
+  static const String layoutDemoPage = "/layoutDemoPage";
+  static const String newRoutePage = "/newRoutePage";
+  static const String randomWordsPage = "/randomWordsPage";
+  static const String basicWidgetDetailsPage = "/basicWidgetDetailsPage";
+  static const String textDemoPage = "/textDemoPage";
+  static const String containerDemoPage = "/containerDemoPage";
+  static const String pointerMoveIndicator = "myHomePage";
+  static const String saveRandomWordsPage = "/saveRandomWordsPage";
+  static const String customPaintTest = "/customPaintTest";
+  static const String pageLifeCycleTest = "/pageLifeCycleTest";
+}
+
 class CassRouter {
   // 初始化路由
-  static const String initialRoute = TabPage.routeName;
+  static const String initialRoute =  Routers.tabPage;
   // 路由配置表
   static final Map<String, WidgetBuilder> routes = {
-    TabPage.routeName: (context) => const TabPage(),
-    LayoutDemoPage.routeName: (context) => const LayoutDemoPage(),
-    NewRoutePage.routeName: (context) => NewRoutePage(),
-    RandomWordsPage.routeName: (context) => const RandomWordsPage(),
-    BasicWidgetDetailsPage.routeName: (context) => const BasicWidgetDetailsPage(),
-    TextDemoPage.routeName: (context) => const TextDemoPage(),
-    ContainerDemoPage.routeName: (context) => const ContainerDemoPage(),
-    PointerMoveIndicator.routeName: (context) => const PointerMoveIndicator(x:0,y:10),
-    SaveRandomWordsPage.routeName: (context) => SaveRandomWordsPage(words: ModalRoute.of(context).settings.arguments),
-    CustomPaintTest.routeName: (context) => const CustomPaintTest()
+    Routers.tabPage: (context) => const TabPage(),
+    Routers.layoutDemoPage: (context) => const LayoutDemoPage(),
+    Routers.newRoutePage: (context) => NewRoutePage(),
+    Routers.randomWordsPage: (context) => const RandomWordsPage(),
+    Routers.basicWidgetDetailsPage: (context) => const BasicWidgetDetailsPage(),
+    Routers.textDemoPage: (context) => const TextDemoPage(),
+    Routers.containerDemoPage: (context) => const ContainerDemoPage(),
+    Routers.pointerMoveIndicator: (context) => const PointerMoveIndicator(x:0,y:10),
+    Routers.saveRandomWordsPage: (context) => SaveRandomWordsPage(words: ModalRoute.of(context).settings.arguments),
+    Routers.customPaintTest: (context) => const CustomPaintTest(),
+    Routers.pageLifeCycleTest: (context) => const PageLifeCycleTest(),
   };
   // 路由勾子
   static final RouteFactory generateRoute = (settings) {
     switch (settings.name) {
-      case 'tipRoutePage':
+      case '/tipRoutePage':
         return MaterialPageRoute(builder: (context) => TipRoutePage(text: settings.arguments),maintainState: false,fullscreenDialog: false);
       // case 'saveRandomWordsPage':
       //   return MaterialPageRoute(builder: (context)=> SaveRandomWordsPage(words: settings.arguments));

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class PointerMoveIndicator extends StatefulWidget {
-  static const String routeName = "pointerMoveIndicator";
   final double x;
   final double y;
 

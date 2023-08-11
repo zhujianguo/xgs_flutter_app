@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:xgs_flutter_app/customWidget/EcAppBar.dart';
 
 class SaveRandomWordsPage extends StatelessWidget{
-  static const String routeName = "saveRandomWordsPage";
 
   const SaveRandomWordsPage({Key key, @required this.words}) : super(key: key); // 接收一个text参数
   final words;

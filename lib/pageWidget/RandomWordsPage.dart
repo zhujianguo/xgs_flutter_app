@@ -4,7 +4,6 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
 class RandomWordsPage extends StatefulWidget {
-  static const String routeName = "randomWordsPage";
 
   const RandomWordsPage({Key key}) : super(key: key);
   @override

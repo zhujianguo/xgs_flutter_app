@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:xgs_flutter_app/customWidget/EcAppBar.dart';
 
 class LayoutDemoPage extends StatelessWidget {
-  static const String routeName = "layoutDemoPage";
 
   const LayoutDemoPage({Key key}) : super(key: key);
   @override

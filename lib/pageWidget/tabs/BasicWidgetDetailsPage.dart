@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class BasicWidgetDetailsPage extends StatelessWidget {
-  static const String routeName = "basicWidgetDetailsPage";
 
   const BasicWidgetDetailsPage({Key key}) : super(key: key);
   @override

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:xgs_flutter_app/Route.dart';
 import '../TipRoutePage.dart';
 
 class MyHomePage extends StatefulWidget {
-  static const String routeName = "myHomePage";
+
+  const MyHomePage({Key key}) : super(key: key);
   @override
+  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
@@ -16,8 +19,10 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children:[
           TextButton(
-            child:const Text("基础组件"),
-            onPressed: (){ },
+            child:const Text("生命周期"),
+            onPressed: (){
+              Navigator.of(context).pushNamed(Routers.pageLifeCycleTest);
+            },
           ),
           TextButton(
             child:const Text("布局类组件"),
