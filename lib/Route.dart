@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'eventDemo/PointerMoveIndicator.dart';
 import 'pageWidget/LayoutDemoPage.dart';
+import 'pageWidget/customPaintTest/index.dart';
 import 'pageWidget/tabs/TabPage.dart';
 import 'pageWidget/NewRoutePage.dart';
 import 'pageWidget/SaveRandomWordsPage.dart';
@@ -25,6 +25,7 @@ class CassRouter {
     ContainerDemoPage.routeName: (context) => ContainerDemoPage(),
     PointerMoveIndicator.routeName: (context) => PointerMoveIndicator(x:0,y:10),
     SaveRandomWordsPage.routeName: (context) => SaveRandomWordsPage(words: ModalRoute.of(context).settings.arguments),
+    CustomPaintTest.routeName: (context) => CustomPaintTest()
   };
   // 路由勾子
   static final RouteFactory generateRoute = (settings) {
