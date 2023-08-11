@@ -5,10 +5,10 @@ class NewRoutePage extends StatelessWidget{
   static const String routeName = "newRoutePage";
   @override
   Widget build(BuildContext context){
-    final wordPair = new WordPair.random();
+    final wordPair = WordPair.random();
     return Scaffold(
       appBar: AppBar(
-        title: Text("New route"),
+        title: const Text("New route"),
       ),
       body: Center(
         child: Text(wordPair.toString()),

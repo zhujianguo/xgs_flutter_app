@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:xgs_flutter_app/utils/Adapt.dart';
 
 //按照惯例，widget 的构造函数参数应使用命名参数，命名参数中的必需要传的参数要添加required关键字，
 //这样有利于静态代码分析器进行检查；在继承 widget 时，第一个参数通常应该是Key。
@@ -9,14 +8,15 @@ import 'package:xgs_flutter_app/utils/Adapt.dart';
 class ContainerDemoPage extends StatelessWidget{
   static const String routeName = "containerDemoPage";
 
+  const ContainerDemoPage({Key key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
-    var topBarHeight = Adapt().topBarHeight;
     return
       Scaffold(
           appBar: AppBar(
-            title: Text("ContainerDemo"),
+            title: const Text("ContainerDemo"),
             backgroundColor: Colors.teal,
           ),
           body: Container(

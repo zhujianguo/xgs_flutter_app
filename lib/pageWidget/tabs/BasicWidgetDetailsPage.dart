@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 class BasicWidgetDetailsPage extends StatelessWidget {
   static const String routeName = "basicWidgetDetailsPage";
+
+  const BasicWidgetDetailsPage({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,14 +21,14 @@ class BasicWidgetDetailsPage extends StatelessWidget {
     return Container(
       color: Colors.white70,
       width: MediaQuery.of(context).size.width, // 获取屏幕宽
-      padding: EdgeInsets.all(6.0), // 四个方向间隔6像素
-      margin: EdgeInsets.only(bottom: 1), // 和下面的组件间隔1像素
+      padding: const EdgeInsets.all(6.0), // 四个方向间隔6像素
+      margin: const EdgeInsets.only(bottom: 1), // 和下面的组件间隔1像素
       child: Column(
         children: [
           GestureDetector(
             child: Text(
               textInfo,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.w900,
                 color: Colors.teal,
               ),
@@ -35,7 +37,7 @@ class BasicWidgetDetailsPage extends StatelessWidget {
               Navigator.pushNamed(context, routerName);
             },
           ),
-          Divider(height: 1, color: Colors.red,),
+          const Divider(height: 1, color: Colors.red,),
         ],
       )
     );

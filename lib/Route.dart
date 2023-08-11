@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_function_declarations_over_variables
+
 import 'package:flutter/material.dart';
 import 'eventDemo/PointerMoveIndicator.dart';
 import 'pageWidget/LayoutDemoPage.dart';
@@ -13,19 +15,19 @@ import 'pageWidget/layoutWeight/ContainerDemoPage.dart';
 
 class CassRouter {
   // 初始化路由
-  static final String initialRoute = TabPage.routeName;
+  static const String initialRoute = TabPage.routeName;
   // 路由配置表
   static final Map<String, WidgetBuilder> routes = {
-    TabPage.routeName: (context) => TabPage(),
-    LayoutDemoPage.routeName: (context) => LayoutDemoPage(),
+    TabPage.routeName: (context) => const TabPage(),
+    LayoutDemoPage.routeName: (context) => const LayoutDemoPage(),
     NewRoutePage.routeName: (context) => NewRoutePage(),
-    RandomWordsPage.routeName: (context) => RandomWordsPage(),
-    BasicWidgetDetailsPage.routeName: (context) => BasicWidgetDetailsPage(),
-    TextDemoPage.routeName: (context) => TextDemoPage(),
-    ContainerDemoPage.routeName: (context) => ContainerDemoPage(),
-    PointerMoveIndicator.routeName: (context) => PointerMoveIndicator(x:0,y:10),
+    RandomWordsPage.routeName: (context) => const RandomWordsPage(),
+    BasicWidgetDetailsPage.routeName: (context) => const BasicWidgetDetailsPage(),
+    TextDemoPage.routeName: (context) => const TextDemoPage(),
+    ContainerDemoPage.routeName: (context) => const ContainerDemoPage(),
+    PointerMoveIndicator.routeName: (context) => const PointerMoveIndicator(x:0,y:10),
     SaveRandomWordsPage.routeName: (context) => SaveRandomWordsPage(words: ModalRoute.of(context).settings.arguments),
-    CustomPaintTest.routeName: (context) => CustomPaintTest()
+    CustomPaintTest.routeName: (context) => const CustomPaintTest()
   };
   // 路由勾子
   static final RouteFactory generateRoute = (settings) {

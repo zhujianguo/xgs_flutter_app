@@ -5,6 +5,8 @@ import 'package:xgs_flutter_app/utils/Adapt.dart';
 
 class ErrorPage extends StatelessWidget{
   static const String routeName = "errorPage";
+
+  const ErrorPage({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context){
     return Scaffold(

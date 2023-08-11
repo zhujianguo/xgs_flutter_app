@@ -4,6 +4,8 @@ import 'package:xgs_flutter_app/pageWidget/tabs/BasicWidgetDetailsPage.dart';
 
 class TabPage extends StatefulWidget {
   static const String routeName = "tabPage";
+
+  const TabPage({Key key}) : super(key: key);
   @override
   State<TabPage> createState() => _MyStatefulWidgetState();
 }
@@ -31,23 +33,23 @@ class _MyStatefulWidgetState extends State<TabPage> {
         onPressed: (){
 
         },
-        child: Icon(
+        child: const Icon(
           Icons.add,
           color: Colors.white,
         ),
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.white,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           mainAxisSize: MainAxisSize.max,
           children: [
-            IconButton(onPressed: (){_onItemTapped(0,"首页");}, icon: Icon(Icons.home), color: _setIconColor(0)),
-            IconButton(onPressed: (){_onItemTapped(1,"组件");}, icon: Icon(Icons.business), color: _setIconColor(1)),
-            Text(''),
-            IconButton(onPressed: (){_onItemTapped(2,"资讯");}, icon: Icon(Icons.school), color: _setIconColor(2)),
-            IconButton(onPressed: (){_onItemTapped(3,"设置");}, icon: Icon(Icons.settings), color: _setIconColor(3))
+            IconButton(onPressed: (){_onItemTapped(0,"首页");}, icon: const Icon(Icons.home), color: _setIconColor(0)),
+            IconButton(onPressed: (){_onItemTapped(1,"组件");}, icon: const Icon(Icons.business), color: _setIconColor(1)),
+            const Text(''),
+            IconButton(onPressed: (){_onItemTapped(2,"资讯");}, icon: const Icon(Icons.school), color: _setIconColor(2)),
+            IconButton(onPressed: (){_onItemTapped(3,"设置");}, icon: const Icon(Icons.settings), color: _setIconColor(3))
           ],
         ),
       ),
@@ -56,14 +58,14 @@ class _MyStatefulWidgetState extends State<TabPage> {
   }
 
   // 初始化首页渲染组件
-  List<Widget> _widgetOptions = <Widget>[
+  final List<Widget> _widgetOptions = <Widget>[
     MyHomePage(),
-    BasicWidgetDetailsPage(),
-    Text(
+    const BasicWidgetDetailsPage(),
+    const Text(
       '资讯',
       style: optionStyle,
     ),
-    Text(
+    const Text(
       '设置',
       style: optionStyle,
     ),

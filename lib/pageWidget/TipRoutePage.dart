@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TipRoutePage extends StatelessWidget {
   static const String routeName = "tipRoutePage";
-  TipRoutePage({
+  const TipRoutePage({
     Key key,
     @required this.text,  // 接收一个text参数
   }) : super(key: key);
@@ -13,17 +13,17 @@ class TipRoutePage extends StatelessWidget {
     print('TipRoutePage=======');
     return Scaffold(
       appBar: AppBar(
-        title: Text("提示"),
+        title: const Text("提示"),
       ),
       body: Padding(
-        padding: EdgeInsets.all(18),
+        padding: const EdgeInsets.all(18),
         child: Center(
           child: Column(
             children: <Widget>[
               Text(text),
               TextButton(
                 onPressed: () => Navigator.pop(context, "我又回来了"),
-                child: Text("返回"),
+                child: const Text("返回"),
               )
             ],
           ),

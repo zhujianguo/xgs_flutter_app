@@ -5,11 +5,13 @@ import 'widget/HeartIconPainter.dart';
 class CustomPaintTest extends StatelessWidget {
   static const String routeName = "customPaintTest";
 
+  const CustomPaintTest({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("customPaintTest"),
+        title: const Text("customPaintTest"),
       ),
       body: Center(
         child:
@@ -25,7 +27,7 @@ class CustomPaintTest extends StatelessWidget {
                     child:
                     CustomPaint(
                       painter: HeartIconPainter(),
-                      child: Text("sdfds",textAlign: TextAlign.center),
+                      child: const Text("sdfds",textAlign: TextAlign.center),
                     ),
                   )
             )
