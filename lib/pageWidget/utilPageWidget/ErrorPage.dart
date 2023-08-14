@@ -1,7 +1,7 @@
+
 import 'package:flutter/material.dart';
 import 'package:xgs_flutter_app/common/res/ImagePath.dart';
 import 'package:xgs_flutter_app/customWidget/EcAppBar.dart';
-import 'package:xgs_flutter_app/utils/Adapt.dart';
 
 class ErrorPage extends StatelessWidget{
   static const String routeName = "errorPage";
@@ -19,7 +19,8 @@ class ErrorPage extends StatelessWidget{
           children: [
             Image.asset(
               ImagePath.error_page_image,
-              width: Adapt.width,
+              width: 200,
+              height: 200,
             ),
           ],
         ),

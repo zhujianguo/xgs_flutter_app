@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_function_declarations_over_variables
 
 import 'package:flutter/material.dart';
+import 'package:xgs_flutter_app/pageWidget/utilPageWidget/ErrorPage.dart';
 import 'eventDemo/PointerMoveIndicator.dart';
 import 'pageLifeCycleTest/index.dart';
 import 'pageWidget/LayoutDemoPage.dart';
@@ -15,17 +16,17 @@ import 'basicWidget/TextDemoPage.dart';
 import 'pageWidget/layoutWeight/ContainerDemoPage.dart';
 
 class Routers {
-  static const String tabPage = "/tabPage";
-  static const String layoutDemoPage = "/layoutDemoPage";
-  static const String newRoutePage = "/newRoutePage";
-  static const String randomWordsPage = "/randomWordsPage";
-  static const String basicWidgetDetailsPage = "/basicWidgetDetailsPage";
-  static const String textDemoPage = "/textDemoPage";
-  static const String containerDemoPage = "/containerDemoPage";
+  static const String tabPage = "tabPage";
+  static const String layoutDemoPage = "layoutDemoPage";
+  static const String newRoutePage = "newRoutePage";
+  static const String randomWordsPage = "randomWordsPage";
+  static const String basicWidgetDetailsPage = "basicWidgetDetailsPage";
+  static const String textDemoPage = "textDemoPage";
+  static const String containerDemoPage = "containerDemoPage";
   static const String pointerMoveIndicator = "myHomePage";
-  static const String saveRandomWordsPage = "/saveRandomWordsPage";
-  static const String customPaintTest = "/customPaintTest";
-  static const String pageLifeCycleTest = "/pageLifeCycleTest";
+  static const String saveRandomWordsPage = "saveRandomWordsPage";
+  static const String customPaintTest = "customPaintTest";
+  static const String pageLifeCycleTest = "pageLifeCycleTest";
 }
 
 class CassRouter {
@@ -35,7 +36,7 @@ class CassRouter {
   static final Map<String, WidgetBuilder> routes = {
     Routers.tabPage: (context) => const TabPage(),
     Routers.layoutDemoPage: (context) => const LayoutDemoPage(),
-    Routers.newRoutePage: (context) => NewRoutePage(),
+    Routers.newRoutePage: (context) => const NewRoutePage(),
     Routers.randomWordsPage: (context) => const RandomWordsPage(),
     Routers.basicWidgetDetailsPage: (context) => const BasicWidgetDetailsPage(),
     Routers.textDemoPage: (context) => const TextDemoPage(),
@@ -48,10 +49,8 @@ class CassRouter {
   // 路由勾子
   static final RouteFactory generateRoute = (settings) {
     switch (settings.name) {
-      case '/tipRoutePage':
+      case 'tipRoutePage':
         return MaterialPageRoute(builder: (context) => TipRoutePage(text: settings.arguments),maintainState: false,fullscreenDialog: false);
-      // case 'saveRandomWordsPage':
-      //   return MaterialPageRoute(builder: (context)=> SaveRandomWordsPage(words: settings.arguments));
       default:
         return null;
     }
@@ -60,7 +59,7 @@ class CassRouter {
   // 路由404（即路由页面不存在）
   static final RouteFactory unKnowRoute = (settings) {
     return MaterialPageRoute(builder: (context){
-      return NewRoutePage();
+      return const ErrorPage();
     });
   };
 }
