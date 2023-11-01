@@ -35,7 +35,7 @@ class PointerMoveIndicatorState extends State<PointerMoveIndicator> {
                     width: 500,
                     height: 200,
                     child: Text('''localPosition:${_event?.localPosition ?? ''}
-position:${_event?.position ?? ''}''',
+                    position:${_event?.position ?? ''}''',
                         style: TextStyle(color: Colors.red, fontSize: 20)),
                   ),
                   onPointerDown: (PointerDownEvent event) =>
@@ -54,22 +54,22 @@ position:${_event?.position ?? ''}''',
                         height: 100.0,
                         child: Text("AbsorbPointer包裹"),
                       ),
-                      onPointerDown: (event)=>print("in"),
+                      onPointerDown: (event) => print("in"),
                     ),
                   ),
-                  onPointerDown: (event)=>print("up"),
+                  onPointerDown: (event) => print("up"),
                 ),
                 Listener(
-                    child: Listener(
-                      child: Container(
-                        color: Colors.amber,
-                        width: 200.0,
-                        height: 100.0,
-                        child: Text("纯Listener"),
-                      ),
-                      onPointerDown: (event)=>print("in"),
+                  child: Listener(
+                    child: Container(
+                      color: Colors.amber,
+                      width: 200.0,
+                      height: 100.0,
+                      child: Text("纯Listener"),
+                    ),
+                    onPointerDown: (event) => print("in"),
                   ),
-                  onPointerDown: (event)=>print("up"),
+                  onPointerDown: (event) => print("up"),
                 ),
                 Listener(
                   child: IgnorePointer(
@@ -80,10 +80,10 @@ position:${_event?.position ?? ''}''',
                         height: 100.0,
                         child: Text("IgnorePointer包裹"),
                       ),
-                      onPointerDown: (event)=>print("in"),
+                      onPointerDown: (event) => print("in"),
                     ),
                   ),
-                  onPointerDown: (event)=>print("up"),
+                  onPointerDown: (event) => print("up"),
                 )
               ],
             )));
