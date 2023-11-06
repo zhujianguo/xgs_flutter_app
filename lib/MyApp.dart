@@ -1,13 +1,14 @@
 
 import 'package:flutter/material.dart';
 import 'Route.dart';
+import 'package:get/get.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: '小怪兽学习Flutter',
         theme: ThemeData(primarySwatch: Colors.red),
         initialRoute: CassRouter.initialRoute,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:xgs_flutter_app/pageWidget/layoutWeight/controller/ContainerDemoPageController.dart';
 
 //按照惯例，widget 的构造函数参数应使用命名参数，命名参数中的必需要传的参数要添加required关键字，
 //这样有利于静态代码分析器进行检查；在继承 widget 时，第一个参数通常应该是Key。
@@ -12,6 +14,7 @@ class ContainerDemoPage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    final ContainerDemoPageController c = Get.put(ContainerDemoPageController());
     return
       Scaffold(
           appBar: AppBar(
@@ -22,6 +25,7 @@ class ContainerDemoPage extends StatelessWidget{
             width: 200,
             height: 500,
             color: Colors.blue,
+            child: Obx(() => Text("Clicks: ${c.count}")),
           )
       );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:xgs_flutter_app/Route.dart';
+import '../../Route.dart';
 import '../TipRoutePage.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -21,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
           TextButton(
             child:const Text("生命周期"),
             onPressed: (){
-              Navigator.of(context).pushNamed(Routers.pageLifeCycleTest);
+              Get.toNamed(Routers.containerDemoPage);
             },
           ),
           TextButton(
@@ -63,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
           TextButton(
             child:const Text("通过pushNamed跳转"),
             onPressed: () {
-              Navigator.pushNamed(context, "newRoutePage");
+              Navigator.pushNamed(context, Routers.newRoutePage);
             },
           ),
           TextButton(
