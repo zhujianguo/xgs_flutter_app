@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PointerMoveIndicator extends StatefulWidget {
+  static const String routeName = "pointerMoveIndicator";
   final double x;
   final double y;
 
@@ -21,7 +22,7 @@ class PointerMoveIndicatorState extends State<PointerMoveIndicator> {
     print("zhu===" + '${widget.y}');
     return Scaffold(
         appBar: AppBar(
-          title: const Text("事件学习"),
+          title: Text("事件学习"),
         ),
         body: GestureDetector(
             onTap: () => {print("我被点击了")},
@@ -35,7 +36,7 @@ class PointerMoveIndicatorState extends State<PointerMoveIndicator> {
                     height: 200,
                     child: Text('''localPosition:${_event?.localPosition ?? ''}
                     position:${_event?.position ?? ''}''',
-                        style: const TextStyle(color: Colors.red, fontSize: 20)),
+                        style: TextStyle(color: Colors.red, fontSize: 20)),
                   ),
                   onPointerDown: (PointerDownEvent event) =>
                       setState(() => _event = event),
@@ -51,24 +52,24 @@ class PointerMoveIndicatorState extends State<PointerMoveIndicator> {
                         color: Colors.red,
                         width: 200.0,
                         height: 100.0,
-                        child: const Text("AbsorbPointer包裹"),
+                        child: Text("AbsorbPointer包裹"),
                       ),
-                      onPointerDown: (event)=>print("in"),
+                      onPointerDown: (event) => print("in"),
                     ),
                   ),
-                  onPointerDown: (event)=>print("up"),
+                  onPointerDown: (event) => print("up"),
                 ),
                 Listener(
-                    child: Listener(
-                      child: Container(
-                        color: Colors.amber,
-                        width: 200.0,
-                        height: 100.0,
-                        child: const Text("纯Listener"),
-                      ),
-                      onPointerDown: (event)=>print("in"),
+                  child: Listener(
+                    child: Container(
+                      color: Colors.amber,
+                      width: 200.0,
+                      height: 100.0,
+                      child: Text("纯Listener"),
+                    ),
+                    onPointerDown: (event) => print("in"),
                   ),
-                  onPointerDown: (event)=>print("up"),
+                  onPointerDown: (event) => print("up"),
                 ),
                 Listener(
                   child: IgnorePointer(
@@ -77,12 +78,12 @@ class PointerMoveIndicatorState extends State<PointerMoveIndicator> {
                         color: Colors.teal,
                         width: 200.0,
                         height: 100.0,
-                        child: const Text("IgnorePointer包裹"),
+                        child: Text("IgnorePointer包裹"),
                       ),
-                      onPointerDown: (event)=>print("in"),
+                      onPointerDown: (event) => print("in"),
                     ),
                   ),
-                  onPointerDown: (event)=>print("up"),
+                  onPointerDown: (event) => print("up"),
                 )
               ],
             )));
