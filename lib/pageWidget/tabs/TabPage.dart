@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xgs_flutter_app/pageWidget/tabs/MyHomePage.dart';
-import 'package:xgs_flutter_app/pageWidget/tabs/BasicWidgetDetailsPage.dart';
+import 'package:xgs_flutter_app/pageWidget/tabs/ThirdPartyLibrariesPage.dart';
 
 class TabPage extends StatefulWidget {
   static const String routeName = "tabPage";
@@ -44,7 +44,7 @@ class _MyStatefulWidgetState extends State<TabPage> {
           mainAxisSize: MainAxisSize.max,
           children: [
             IconButton(onPressed: (){_onItemTapped(0,"首页");}, icon: Icon(Icons.home), color: _setIconColor(0)),
-            IconButton(onPressed: (){_onItemTapped(1,"组件");}, icon: Icon(Icons.business), color: _setIconColor(1)),
+            IconButton(onPressed: (){_onItemTapped(1,"第三方库");}, icon: Icon(Icons.business), color: _setIconColor(1)),
             Text(''),
             IconButton(onPressed: (){_onItemTapped(2,"资讯");}, icon: Icon(Icons.school), color: _setIconColor(2)),
             IconButton(onPressed: (){_onItemTapped(3,"设置");}, icon: Icon(Icons.settings), color: _setIconColor(3))
@@ -58,7 +58,7 @@ class _MyStatefulWidgetState extends State<TabPage> {
   // 初始化首页渲染组件
   List<Widget> _widgetOptions = <Widget>[
     MyHomePage(),
-    BasicWidgetDetailsPage(),
+    ThirdPartyLibrariesPage(),
     Text(
       '资讯',
       style: optionStyle,

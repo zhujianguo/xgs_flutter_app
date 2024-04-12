@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BasicWidgetDetailsPage extends StatelessWidget {
-  static const String routeName = "basicWidgetDetailsPage";
+class ThirdPartyLibrariesPage extends StatelessWidget {
+  static const String routeName = "thirdPartyLibrariesPage";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

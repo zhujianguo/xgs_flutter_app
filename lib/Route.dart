@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'eventDemo/PointerMoveIndicator.dart';
-import 'pageWidget/LayoutDemoPage.dart';
-import 'pageWidget/customPaintTest/index.dart';
-import 'pageWidget/tabs/TabPage.dart';
-import 'pageWidget/NewRoutePage.dart';
-import 'pageWidget/SaveRandomWordsPage.dart';
-import 'pageWidget/TipRoutePage.dart';
-import 'pageWidget/RandomWordsPage.dart';
-import 'pageWidget/tabs/BasicWidgetDetailsPage.dart';
-import 'basicWidget/TextDemoPage.dart';
-import 'pageWidget/layoutWeight/ContainerDemoPage.dart';
+import 'package:xgs_flutter_app/basicWidget/TextDemoPage.dart';
+import 'package:xgs_flutter_app/eventDemo/PointerMoveIndicator.dart';
+import 'package:xgs_flutter_app/pageWidget/LayoutDemoPage.dart';
+import 'package:xgs_flutter_app/pageWidget/NewRoutePage.dart';
+import 'package:xgs_flutter_app/pageWidget/RandomWordsPage.dart';
+import 'package:xgs_flutter_app/pageWidget/SaveRandomWordsPage.dart';
+import 'package:xgs_flutter_app/pageWidget/TipRoutePage.dart';
+import 'package:xgs_flutter_app/pageWidget/customPaintTest/index.dart';
+import 'package:xgs_flutter_app/pageWidget/layoutWeight/ContainerDemoPage.dart';
+import 'package:xgs_flutter_app/pageWidget/tabs/TabPage.dart';
+import 'package:xgs_flutter_app/pageWidget/tabs/ThirdPartyLibrariesPage.dart';
 
 class CassRouter {
   // 初始化路由
@@ -20,7 +20,7 @@ class CassRouter {
     LayoutDemoPage.routeName: (context) => LayoutDemoPage(),
     NewRoutePage.routeName: (context) => NewRoutePage(),
     RandomWordsPage.routeName: (context) => RandomWordsPage(),
-    BasicWidgetDetailsPage.routeName: (context) => BasicWidgetDetailsPage(),
+    ThirdPartyLibrariesPage.routeName: (context) => ThirdPartyLibrariesPage(),
     TextDemoPage.routeName: (context) => TextDemoPage(),
     ContainerDemoPage.routeName: (context) => ContainerDemoPage(),
     PointerMoveIndicator.routeName: (context) => PointerMoveIndicator(x:0,y:10),
