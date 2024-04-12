@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
 class TextDemoPage extends StatelessWidget {
-  static const String routeName = "textDemoPage";
+
+  const TextDemoPage({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Text基本使用'),
+        title: const Text('Text基本使用'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               "Text组件的使用",
               style: TextStyle(
                   color: Colors.purpleAccent,
@@ -52,7 +53,7 @@ class TextDemoPage extends StatelessWidget {
               // 图像的语义描述，用于向Android的TalkBack和iOS上的VoiceOver提供图像描述
               textWidthBasis: TextWidthBasis.longestLine,
             ),
-            Text(
+            const Text(
               "Text组件的使用Text组件的使用Text组件的使用Text组件的使用Text组件的使用Text组件的使用Text组件的使用Text组件的使用Text组件的使用",
               style: TextStyle(
                 color: Colors.white,
@@ -76,14 +77,14 @@ class TextDemoPage extends StatelessWidget {
               overflow: TextOverflow.fade,
             ),
             DefaultTextStyle(
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.red,
                   fontSize: 20.0,
                 ),
                 textAlign: TextAlign.start,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children:<Widget> [
+                  children:const <Widget> [
                     Text("小怪兽"),
                     Text("奥特曼"),
                     Text("怪兽奥特曼",

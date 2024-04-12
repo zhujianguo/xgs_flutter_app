@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class EcAppBar extends StatefulWidget implements PreferredSizeWidget {
+
+  EcAppBar({Key key,
+    this.leadingWidget,
+    @required this.title,
+    this.contentHeight = 44,
+    this.navigationBarBackgroundColor = Colors.red,
+    this.trailingWidget,
+  }) : super(key: key);
+
   final double contentHeight; //从外部指定高度
   Color navigationBarBackgroundColor; //设置导航栏背景的颜色
   Widget leadingWidget;
   Widget trailingWidget;
   String title;
   String routerName;
-
-  EcAppBar({
-    this.leadingWidget,
-    @required this.title,
-    this.contentHeight = 44,
-    this.navigationBarBackgroundColor = Colors.red,
-    this.trailingWidget,
-  }) : super();
 
   @override
   State<StatefulWidget> createState() {
@@ -44,7 +45,7 @@ class _EcAppBarState extends State<EcAppBar> {
       child: SafeArea(
         top: true,
         child: Container(
-            decoration: UnderlineTabIndicator(
+            decoration: const UnderlineTabIndicator(
               borderSide: BorderSide(width: 1.0, color: Color(0xFFeeeeee)),
             ),
             height: widget.contentHeight,
@@ -54,13 +55,13 @@ class _EcAppBarState extends State<EcAppBar> {
                 Positioned(
                   left: 0,
                   child: Container(
-                    padding: EdgeInsets.only(left: 5),
+                    padding: const EdgeInsets.only(left: 5),
                     child: _leadingWidget(),
                   ),
                 ),
                 Container(
                   child: Text(widget.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                           color: Colors.white)),
@@ -68,7 +69,7 @@ class _EcAppBarState extends State<EcAppBar> {
                 Positioned(
                   right: 0,
                   child: Container(
-                    padding: EdgeInsets.only(right: 5),
+                    padding: const EdgeInsets.only(right: 5),
                     child: widget.trailingWidget,
                   ),
                 ),
@@ -93,7 +94,7 @@ class _EcAppBarState extends State<EcAppBar> {
     Navigator.pop(context)
     }
     },
-      icon: Icon(Icons.arrow_back_ios),
+      icon: const Icon(Icons.arrow_back_ios),
       color: Colors.white,
     ),);
   }

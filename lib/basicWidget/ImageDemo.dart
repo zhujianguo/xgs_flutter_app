@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ImageDemo extends StatelessWidget {
+  const ImageDemo({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
      return Scaffold(
       appBar: AppBar(
-        title: Text('图片组件的使用'),
+        title: const Text('图片组件的使用'),
       ),
       body: _image(),
     );
@@ -14,7 +16,7 @@ class ImageDemo extends StatelessWidget {
   Widget _image(){
     return Center(
       child: Column(
-        children: [
+        children: const [
 
         ],
       ),

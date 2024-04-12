@@ -1,39 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:xgs_flutter_app/basicWidget/TextDemoPage.dart';
-import 'package:xgs_flutter_app/eventDemo/PointerMoveIndicator.dart';
-import 'package:xgs_flutter_app/pageWidget/LayoutDemoPage.dart';
-import 'package:xgs_flutter_app/pageWidget/NewRoutePage.dart';
-import 'package:xgs_flutter_app/pageWidget/RandomWordsPage.dart';
-import 'package:xgs_flutter_app/pageWidget/SaveRandomWordsPage.dart';
-import 'package:xgs_flutter_app/pageWidget/TipRoutePage.dart';
-import 'package:xgs_flutter_app/pageWidget/customPaintTest/index.dart';
-import 'package:xgs_flutter_app/pageWidget/layoutWeight/ContainerDemoPage.dart';
-import 'package:xgs_flutter_app/pageWidget/tabs/TabPage.dart';
 import 'package:xgs_flutter_app/pageWidget/tabs/ThirdPartyLibrariesPage.dart';
+import 'package:xgs_flutter_app/pageWidget/utilPageWidget/ErrorPage.dart';
+import 'eventDemo/PointerMoveIndicator.dart';
+import 'pageLifeCycleTest/index.dart';
+import 'pageWidget/LayoutDemoPage.dart';
+import 'pageWidget/customPaintTest/index.dart';
+import 'pageWidget/tabs/TabPage.dart';
+import 'pageWidget/NewRoutePage.dart';
+import 'pageWidget/SaveRandomWordsPage.dart';
+import 'pageWidget/TipRoutePage.dart';
+import 'pageWidget/RandomWordsPage.dart';
+import 'basicWidget/TextDemoPage.dart';
+import 'pageWidget/layoutWeight/ContainerDemoPage.dart';
+
+class Routers {
+  static const String tabPage = "tabPage";
+  static const String layoutDemoPage = "layoutDemoPage";
+  static const String newRoutePage = "newRoutePage";
+  static const String randomWordsPage = "randomWordsPage";
+  static const String thirdPartyLibrariesPage = "thirdPartyLibrariesPage";
+  static const String textDemoPage = "textDemoPage";
+  static const String containerDemoPage = "containerDemoPage";
+  static const String pointerMoveIndicator = "myHomePage";
+  static const String saveRandomWordsPage = "saveRandomWordsPage";
+  static const String customPaintTest = "customPaintTest";
+  static const String pageLifeCycleTest = "pageLifeCycleTest";
+}
 
 class CassRouter {
   // 初始化路由
-  static final String initialRoute = TabPage.routeName;
+  static const String initialRoute =  Routers.tabPage;
   // 路由配置表
   static final Map<String, WidgetBuilder> routes = {
-    TabPage.routeName: (context) => TabPage(),
-    LayoutDemoPage.routeName: (context) => LayoutDemoPage(),
-    NewRoutePage.routeName: (context) => NewRoutePage(),
-    RandomWordsPage.routeName: (context) => RandomWordsPage(),
-    ThirdPartyLibrariesPage.routeName: (context) => ThirdPartyLibrariesPage(),
-    TextDemoPage.routeName: (context) => TextDemoPage(),
-    ContainerDemoPage.routeName: (context) => ContainerDemoPage(),
-    PointerMoveIndicator.routeName: (context) => PointerMoveIndicator(x:0,y:10),
-    SaveRandomWordsPage.routeName: (context) => SaveRandomWordsPage(words: ModalRoute.of(context).settings.arguments),
-    CustomPaintTest.routeName: (context) => CustomPaintTest()
+    Routers.tabPage: (context) => const TabPage(),
+    Routers.layoutDemoPage: (context) => const LayoutDemoPage(),
+    Routers.newRoutePage: (context) => const NewRoutePage(),
+    Routers.randomWordsPage: (context) => const RandomWordsPage(),
+    Routers.thirdPartyLibrariesPage: (context) => const ThirdPartyLibrariesPage(),
+    Routers.textDemoPage: (context) => const TextDemoPage(),
+    Routers.containerDemoPage: (context) => const ContainerDemoPage(),
+    Routers.pointerMoveIndicator: (context) => const PointerMoveIndicator(x:0,y:10),
+    Routers.saveRandomWordsPage: (context) => SaveRandomWordsPage(words: ModalRoute.of(context).settings.arguments),
+    Routers.customPaintTest: (context) => const CustomPaintTest(),
+    Routers.pageLifeCycleTest: (context) => const PageLifeCycleTest(),
   };
   // 路由勾子
   static final RouteFactory generateRoute = (settings) {
     switch (settings.name) {
       case 'tipRoutePage':
         return MaterialPageRoute(builder: (context) => TipRoutePage(text: settings.arguments),maintainState: false,fullscreenDialog: false);
-      // case 'saveRandomWordsPage':
-      //   return MaterialPageRoute(builder: (context)=> SaveRandomWordsPage(words: settings.arguments));
       default:
         return null;
     }
@@ -42,7 +57,7 @@ class CassRouter {
   // 路由404（即路由页面不存在）
   static final RouteFactory unKnowRoute = (settings) {
     return MaterialPageRoute(builder: (context){
-      return NewRoutePage();
+      return const ErrorPage();
     });
   };
 }

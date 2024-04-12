@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:xgs_flutter_app/Route.dart';
+import '../../Route.dart';
 import '../TipRoutePage.dart';
-import '../layoutWeight/ContainerDemoPage.dart';
 
 class MyHomePage extends StatefulWidget {
-  static const String routeName = "myHomePage";
+
+  const MyHomePage({Key key}) : super(key: key);
   @override
+  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
@@ -13,136 +17,136 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children:[
-            TextButton(
-              child:Text("基础组件"),
-              onPressed: (){ },
-            ),
-            TextButton(
-              child:Text("布局类组件"),
-              onPressed: (){ },
-            ),
-            TextButton(
-              child:Text("通过of(context).pushNamed跳转"),
-              onPressed: (){
-                Navigator.of(context).pushNamed("tipRoutePage",arguments: "我是小怪兽1号");
-              },
-            ),
-            TextButton(
-              child:Text("通过push跳转"),
-              onPressed: () {
-                //导航到新路由
-                Navigator.push( context,
-                    MaterialPageRoute(builder: (context) {
-                      return TipRoutePage(
-                        text: "我是小怪兽2号",
-                      );
-                    }));
-              },
-            ),
-            TextButton(
-              child:Text("路由跳转传参"),
-              onPressed: () async {
-                var result = await Navigator.push(context,
-                    MaterialPageRoute(
-                        builder: (context){
-                          return TipRoutePage(
-                            text: "点击返回按钮携带参数回去",
-                          );
-                        },
-                        fullscreenDialog: false));
-                print("路由返回值：$result");
-              },
-            ),
-            TextButton(
-              child:Text("通过pushNamed跳转"),
-              onPressed: () {
-                Navigator.pushNamed(context, "newRoutePage");
-              },
-            ),
-            TextButton(
-              child:Text("官方演示Demo"),
-              onPressed: () {
-                Navigator.pushNamed(context, "randomWordsPage");
-              },
-            ),
-            TextButton(
-              child:Text("自定义导航样式"),
-              onPressed: (){
-                Navigator.of(context).pushNamed("layoutDemoPage");
-              },
-            ),
-            TextButton(
-              child:Text("404页面"),
-              onPressed: (){
-                Navigator.of(context).pushNamed("errorPage");
-              },
-            ),
-            TextButton(
-              child:Text("未能路由成功"),
-              onPressed: (){
-                Navigator.of(context).pushNamed("error");
-              },
-            ),
-            TextButton(
-              child:Text("LayoutWeight示例"),
-              onPressed: (){
-                Navigator.of(context).pushNamed("layoutDemoPage");
-              },
-            ),
-            TextButton(
-              child:Text("containerDemoPage"),
-              onPressed: (){
-                Navigator.of(context).pushNamed("containerDemoPage");
-              },
-            ),
-            TextButton(
-              child:Text("第五章：容器类组件"),
-              onPressed: (){
-                Navigator.of(context).pushNamed("containerDemoPage");
-              },
-            ),
-            TextButton(
-              child:Text("第六章：可滚动组件"),
-              onPressed: (){
-                Navigator.of(context).pushNamed("containerDemoPage");
-              },
-            ),
-            TextButton(
-              child:Text("第七章：功能型组件", style: TextStyle(color: Colors.red),),
-              onPressed: (){
-                Navigator.of(context).pushNamed("containerDemoPage");
-              },
-            ),
-            TextButton(
-              child:Text("第八章：事件处理与通知"),
-              onPressed: (){
-                Navigator.of(context).pushNamed("pointerMoveIndicator");
-              },
-            ),
-            TextButton(
-              child:Text("第九章：动画"),
-              onPressed: (){
-                Navigator.of(context).pushNamed("containerDemoPage");
-              },
-            ),
-            TextButton(
-              child:Text("第十章：自定义组件"),
-              onPressed: (){
-                Navigator.of(context).pushNamed("containerDemoPage");
-              },
-            ),
-            TextButton(
-              child:Text("第十一章：文件操作与网络请求"),
-              onPressed: (){
-                Navigator.of(context).pushNamed("containerDemoPage");
-              },
-            ),
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children:[
+          TextButton(
+            child:const Text("生命周期"),
+            onPressed: (){
+              Get.toNamed(Routers.containerDemoPage);
+            },
+          ),
+          TextButton(
+            child:const Text("布局类组件"),
+            onPressed: (){ },
+          ),
+          TextButton(
+            child:const Text("通过of(context).pushNamed跳转"),
+            onPressed: (){
+              Navigator.of(context).pushNamed("tipRoutePage",arguments: "我是小怪兽1号");
+            },
+          ),
+          TextButton(
+            child:const Text("通过push跳转"),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  MaterialPageRoute(builder: (context) {
+                    return const TipRoutePage(
+                      text: "我是小怪兽2号",
+                    );
+                  }));
+            },
+          ),
+          TextButton(
+            child:const Text("路由跳转传参"),
+            onPressed: () async {
+              var result = await Navigator.push(context,
+                  MaterialPageRoute(
+                      builder: (context){
+                        return const TipRoutePage(
+                          text: "点击返回按钮携带参数回去",
+                        );
+                      },
+                      fullscreenDialog: false));
+              print("路由返回值：$result");
+            },
+          ),
+          TextButton(
+            child:const Text("通过pushNamed跳转"),
+            onPressed: () {
+              Navigator.pushNamed(context, Routers.newRoutePage);
+            },
+          ),
+          TextButton(
+            child:const Text("官方演示Demo"),
+            onPressed: () {
+              Navigator.pushNamed(context, "randomWordsPage");
+            },
+          ),
+          TextButton(
+            child:const Text("自定义导航样式"),
+            onPressed: (){
+              Navigator.of(context).pushNamed("layoutDemoPage");
+            },
+          ),
+          TextButton(
+            child:const Text("404页面"),
+            onPressed: (){
+              Navigator.of(context).pushNamed("errorPage");
+            },
+          ),
+          TextButton(
+            child:const Text("未能路由成功"),
+            onPressed: (){
+              Navigator.of(context).pushNamed("error");
+            },
+          ),
+          TextButton(
+            child:const Text("LayoutWeight示例"),
+            onPressed: (){
+              Navigator.of(context).pushNamed("layoutDemoPage");
+            },
+          ),
+          TextButton(
+            child:const Text("containerDemoPage"),
+            onPressed: (){
+              Navigator.of(context).pushNamed("containerDemoPage");
+            },
+          ),
+          TextButton(
+            child:const Text("第五章：容器类组件"),
+            onPressed: (){
+              Navigator.of(context).pushNamed("containerDemoPage");
+            },
+          ),
+          TextButton(
+            child:const Text("第六章：可滚动组件"),
+            onPressed: (){
+              Navigator.of(context).pushNamed("containerDemoPage");
+            },
+          ),
+          TextButton(
+            child:const Text("第七章：功能型组件", style: const TextStyle(color: Colors.red),),
+            onPressed: (){
+              Navigator.of(context).pushNamed("containerDemoPage");
+            },
+          ),
+          TextButton(
+            child:const Text("第八章：事件处理与通知"),
+            onPressed: (){
+              Navigator.of(context).pushNamed("pointerMoveIndicator");
+            },
+          ),
+          TextButton(
+            child:const Text("第九章：动画"),
+            onPressed: (){
+              Navigator.of(context).pushNamed("containerDemoPage");
+            },
+          ),
+          TextButton(
+            child:const Text("第十章：自定义组件"),
+            onPressed: (){
+              Navigator.of(context).pushNamed("containerDemoPage");
+            },
+          ),
+          TextButton(
+            child:const Text("第十一章：文件操作与网络请求"),
+            onPressed: (){
+              Navigator.of(context).pushNamed("containerDemoPage");
+            },
+          ),
+        ],
       ),
     );
   }
@@ -174,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    print("deactivate===");
+    print("dispose===");
   }
 
   @override
