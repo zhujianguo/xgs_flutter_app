@@ -6,7 +6,7 @@ class EcAppBar extends StatefulWidget implements PreferredSizeWidget {
   EcAppBar({Key key,
     this.leadingWidget,
     @required this.title,
-    this.contentHeight = 44,
+    this.contentHeight = 56,
     this.navigationBarBackgroundColor = Colors.red,
     this.trailingWidget,
   }) : super(key: key);
@@ -63,7 +63,6 @@ class _EcAppBarState extends State<EcAppBar> {
                   child: Text(widget.title,
                       style: const TextStyle(
                           fontSize: 20,
-                          fontWeight: FontWeight.w600,
                           color: Colors.white)),
                 ),
                 Positioned(
