@@ -13,7 +13,7 @@ class ThirdPartyLibrariesPage extends StatelessWidget {
       children: [
         _myWidget(context, Routers.textDemoPage, 'Text使用'),
         _myWidget(context, Routers.customPaintTest, 'customPaint自定义组件'),
-        _myWidget(context, Routers.filePickerPage, 'customPaint自定义组件'),
+        _myWidget(context, Routers.filePickerPage, 'file_Picker文件选择库'),
       ],
     ));
   }
@@ -21,29 +21,29 @@ class ThirdPartyLibrariesPage extends StatelessWidget {
   Widget _myWidget(BuildContext context, String routerName, String textInfo) {
     return Container(
         color: Colors.white70,
-        width: MediaQuery.of(context).size.width,
-        // 获取屏幕宽
-        padding: const EdgeInsets.all(6.0),
-        // 四个方向间隔6像素
-        margin: const EdgeInsets.only(bottom: 1),
         // 和下面的组件间隔1像素
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
-              child: Text(
-                textInfo,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w900,
-                  color: Colors.teal,
-                ),
-              ),
+              child: Container(
+                alignment: Alignment.center,
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.all(20),
+                  child: Text(
+                    textInfo,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w900,
+                      color: Colors.teal,
+                    ),
+                  )),
               onTap: () {
                 Navigator.pushNamed(context, routerName);
               },
             ),
             const Divider(
               height: 1,
-              color: Colors.red,
+              color: Colors.black12,
             ),
           ],
         ));
