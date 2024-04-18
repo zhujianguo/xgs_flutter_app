@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xgs_flutter_app/pageWidget/file_picker_page.dart';
 import 'package:xgs_flutter_app/pageWidget/tabs/ThirdPartyLibrariesPage.dart';
 import 'package:xgs_flutter_app/pageWidget/utilPageWidget/ErrorPage.dart';
 import 'eventDemo/PointerMoveIndicator.dart';
@@ -25,6 +26,7 @@ class Routers {
   static const String saveRandomWordsPage = "saveRandomWordsPage";
   static const String customPaintTest = "customPaintTest";
   static const String pageLifeCycleTest = "pageLifeCycleTest";
+  static const String filePickerPage = "filePickerPage";
 }
 
 class CassRouter {
@@ -43,6 +45,7 @@ class CassRouter {
     Routers.saveRandomWordsPage: (context) => SaveRandomWordsPage(words: ModalRoute.of(context).settings.arguments),
     Routers.customPaintTest: (context) => const CustomPaintTest(),
     Routers.pageLifeCycleTest: (context) => const PageLifeCycleTest(),
+    Routers.filePickerPage: (context) =>  const FilePickerPage()
   };
   // 路由勾子
   static final RouteFactory generateRoute = (settings) {
