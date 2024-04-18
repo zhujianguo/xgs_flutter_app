@@ -12,8 +12,9 @@ class ThirdPartyLibrariesPage extends StatelessWidget {
         body: Column(
       children: [
         _myWidget(context, Routers.textDemoPage, 'Text使用'),
-        _myWidget(context, Routers.customPaintTest, 'customPaint自定义组件'),
-        _myWidget(context, Routers.filePickerPage, 'file_Picker文件选择库'),
+        _myWidget(context, Routers.customPaintTest, 'customPaint 自定义组件'),
+        _myWidget(context, Routers.filePickerPage, 'file_Picker 文件选择库'),
+        _myWidget(context, Routers.inappwebviewPage, 'flutter_inappwebview WebView加载库'),
       ],
     ));
   }
