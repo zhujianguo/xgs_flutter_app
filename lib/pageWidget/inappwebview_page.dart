@@ -9,6 +9,18 @@ class InappwebviewPage extends StatefulWidget {
 }
 
 class _InappwebviewPageState extends State<InappwebviewPage> {
+  InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
+      crossPlatform: InAppWebViewOptions(
+        useShouldOverrideUrlLoading: true,
+        mediaPlaybackRequiresUserGesture: false, // 如果设置此属性为false将导致Android无法显示加载PDF文件
+      ),
+      android: AndroidInAppWebViewOptions(
+        useHybridComposition: false,
+      ),
+      ios: IOSInAppWebViewOptions(
+        allowsInlineMediaPlayback: true,
+      ));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,19 +28,16 @@ class _InappwebviewPageState extends State<InappwebviewPage> {
         title: Text("InAppWebView Example"),
       ),
       body: InAppWebView(
-        initialUrlRequest: URLRequest(url: Uri.parse("https://mbd.baidu.com/newspage/data/dtlandingsuper?nid=dt_4760731992891664333")),
-        initialOptions: InAppWebViewGroupOptions(
-          crossPlatform: InAppWebViewOptions(
-            javaScriptEnabled: true,
-          ),
-        ),
+        // key: webViewKey,
+        initialUrlRequest: URLRequest(
+            url: Uri.parse("https://docs.google.com/gview?embedded=true&url=http://www.pdf995.com/samples/pdf.pdf")),
+        initialOptions: options,
         onWebViewCreated: (InAppWebViewController controller) {
           // WebView被创建后的操作
           // 可以通过controller来控制WebView的行为
         },
-        onLoadStart: (controller, request){
+        onLoadStart: (controller, request) {
           print("zhu===onLoadStart====");
-
         },
         onLoadStop: (controller, request) {
           // WebView加载页面完成时的操作
@@ -42,7 +51,7 @@ class _InappwebviewPageState extends State<InappwebviewPage> {
           // WebView加载进度发生变化时的操作
           print("zhu===onProgressChanged====");
         },
-        onScrollChanged: (controller, code, progress){
+        onScrollChanged: (controller, code, progress) {
           // WebView滑动发生变化时
           print("zhu======onScrollChanged=======");
         },
