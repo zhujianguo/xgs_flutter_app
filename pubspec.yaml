@@ -28,6 +28,8 @@ dependencies:
   file_picker: 5.2.0
   flutter_inappwebview: 5.7.1
   flutter_card_swiper: 6.1.0
+  photo_manager: 2.6.0
+  wechat_assets_picker: 8.4.3
   get: ^4.6.5
 
 dev_dependencies:

@@ -37,6 +37,7 @@ android {
         applicationId "com.example.xgs_flutter_app"
         minSdkVersion 17
         targetSdkVersion 33
+        multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
