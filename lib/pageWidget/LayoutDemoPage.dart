@@ -3,7 +3,7 @@ import 'package:xgs_flutter_app/customWidget/EcAppBar.dart';
 
 class LayoutDemoPage extends StatelessWidget {
 
-  const LayoutDemoPage({Key key}) : super(key: key);
+  const LayoutDemoPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     print("LayoutDemoPage===========");

@@ -43,9 +43,9 @@ class CassRouter {
     Routers.randomWordsPage: (context) => const RandomWordsPage(),
     Routers.thirdPartyLibrariesPage: (context) => const ThirdPartyLibrariesPage(),
     Routers.textDemoPage: (context) => const TextDemoPage(),
-    Routers.containerDemoPage: (context) => const ContainerDemoPage(),
+    Routers.containerDemoPage: (context) =>const ContainerDemoPage(),
     Routers.pointerMoveIndicator: (context) => const PointerMoveIndicator(x:0,y:10),
-    Routers.saveRandomWordsPage: (context) => SaveRandomWordsPage(words: ModalRoute.of(context).settings.arguments),
+    Routers.saveRandomWordsPage: (context) => SaveRandomWordsPage(words: ModalRoute.of(context)?.settings.arguments),
     Routers.customPaintTest: (context) => const CustomPaintTest(),
     Routers.pageLifeCycleTest: (context) => const PageLifeCycleTest(),
     Routers.filePickerPage: (context) =>  const FilePickerPage(),
@@ -55,7 +55,8 @@ class CassRouter {
   static final RouteFactory generateRoute = (settings) {
     switch (settings.name) {
       case 'tipRoutePage':
-        return MaterialPageRoute(builder: (context) => TipRoutePage(text: settings.arguments),maintainState: false,fullscreenDialog: false);
+        return null;
+       // return MaterialPageRoute(builder: (context) => TipRoutePage(text: settings.arguments),maintainState: false,fullscreenDialog: false);
       default:
         return null;
     }

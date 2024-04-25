@@ -4,7 +4,7 @@ import 'package:xgs_flutter_app/Route.dart';
 class ThirdPartyLibrariesPage extends StatelessWidget {
   static const String routeName = "thirdPartyLibrariesPage";
 
-  const ThirdPartyLibrariesPage({Key key}) : super(key: key);
+  const ThirdPartyLibrariesPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

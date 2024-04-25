@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
 class NewRoutePage extends StatelessWidget{
-  const NewRoutePage({Key key}) : super(key: key);
+  const NewRoutePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context){

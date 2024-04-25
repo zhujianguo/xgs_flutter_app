@@ -4,7 +4,7 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
 class RandomWordsPage extends StatefulWidget {
-  const RandomWordsPage({Key key}) : super(key: key);
+  const RandomWordsPage({Key? key}) : super(key: key);
 
   @override
   createState() => new RandomWordsState();

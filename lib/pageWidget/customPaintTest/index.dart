@@ -4,7 +4,7 @@ import 'widget/HeartIconPainter.dart';
 
 class CustomPaintTest extends StatelessWidget {
 
-  const CustomPaintTest({Key key}) : super(key: key);
+  const CustomPaintTest({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

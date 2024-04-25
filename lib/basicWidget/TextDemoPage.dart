@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TextDemoPage extends StatelessWidget {
 
-  const TextDemoPage({Key key}) : super(key: key);
+  const TextDemoPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

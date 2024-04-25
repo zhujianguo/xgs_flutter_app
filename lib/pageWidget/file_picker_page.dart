@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:xgs_flutter_app/customWidget/EcAppBar.dart';
 
 class FilePickerPage extends StatefulWidget {
-  const FilePickerPage({Key key}) : super(key: key);
+  const FilePickerPage({Key? key}) : super(key: key);
 
   @override
   _FilePickerPageState createState() => _FilePickerPageState();
@@ -21,7 +21,7 @@ class _FilePickerPageState extends State<FilePickerPage> {
       body: ListView(children: [
         TextButton(
           onPressed: () async {
-            FilePickerResult result = await FilePicker.platform
+            FilePickerResult? result = await FilePicker.platform
                 .pickFiles(type: FileType.custom, allowedExtensions: ['mp4'], allowMultiple: true);
             if (result != null) {
               print(result.files.single.name);

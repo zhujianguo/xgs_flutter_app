@@ -9,7 +9,7 @@ import 'package:xgs_flutter_app/pageWidget/layoutWeight/controller/ContainerDemo
 
 class ContainerDemoPage extends StatelessWidget{
 
-  const ContainerDemoPage({Key key}) : super(key: key);
+  const ContainerDemoPage({Key? key}) : super(key: key);
 
 
   @override

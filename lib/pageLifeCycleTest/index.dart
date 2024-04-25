@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PageLifeCycleTest extends StatefulWidget{
-  const PageLifeCycleTest({Key key}) : super(key: key);
+  const PageLifeCycleTest({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState()=>PageLifeCycleTestState();

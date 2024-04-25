@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class PointerMoveIndicator extends StatefulWidget {
   static const String routeName = "pointerMoveIndicator";
-  final double x;
-  final double y;
+  final double? x;
+  final double? y;
 
-  const PointerMoveIndicator({Key key, this.x, this.y}) : super(key: key);
+  const PointerMoveIndicator({Key? key, this.x, this.y}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -14,7 +14,7 @@ class PointerMoveIndicator extends StatefulWidget {
 }
 
 class PointerMoveIndicatorState extends State<PointerMoveIndicator> {
-  PointerEvent _event;
+  PointerEvent? _event;
 
   @override
   Widget build(BuildContext context) {

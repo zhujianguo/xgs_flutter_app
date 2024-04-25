@@ -4,7 +4,7 @@ import 'package:xgs_flutter_app/pageWidget/tabs/ThirdPartyLibrariesPage.dart';
 
 class TabPage extends StatefulWidget {
 
-  const TabPage({Key key}) : super(key: key);
+  const TabPage({Key? key}) : super(key: key);
   @override
   State<TabPage> createState() => _MyStatefulWidgetState();
 }

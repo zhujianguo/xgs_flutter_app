@@ -3,20 +3,21 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class EcAppBar extends StatefulWidget implements PreferredSizeWidget {
 
-  EcAppBar({Key key,
+  EcAppBar({Key? key,
     this.leadingWidget,
-    @required this.title,
+    required this.title,
     this.contentHeight = 56,
     this.navigationBarBackgroundColor = Colors.red,
     this.trailingWidget,
+    this.routerName
   }) : super(key: key);
 
   final double contentHeight; //从外部指定高度
   Color navigationBarBackgroundColor; //设置导航栏背景的颜色
-  Widget leadingWidget;
-  Widget trailingWidget;
+  Widget? leadingWidget;
+  Widget? trailingWidget;
   String title;
-  String routerName;
+  String? routerName;
 
   @override
   State<StatefulWidget> createState() {
@@ -78,7 +79,7 @@ class _EcAppBarState extends State<EcAppBar> {
     );
   }
 
-  Widget _leadingWidget() {
+  Widget? _leadingWidget() {
     if (widget.leadingWidget != null) {
       return widget.leadingWidget;
     }
